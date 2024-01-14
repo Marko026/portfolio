@@ -4,6 +4,16 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'title',
+      title: 'Contact Title',
+      type: 'string',
+    },
+    {
+      name: 'subtitle',
+      title: 'Subtitle',
+      type: 'string',
+    },
+    {
       name: 'name',
       title: 'My Socials',
       type: 'string',
@@ -38,8 +48,7 @@ export default {
     {
       name: 'email',
       title: 'Email',
-      type: 'url',
-      validation: (Rule: any) => Rule.url({schemes: ['mailto']}),
+      type: 'string',
     },
   ],
 }
