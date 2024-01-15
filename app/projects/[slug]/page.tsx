@@ -1,4 +1,4 @@
-import { getProject } from "@/sanity/utils/utilsSantiy";
+import { getProject } from "@/sanity/utils/utilsSanity";
 import { allProjects } from "@/types";
 
 const Project = async ({ params }: allProjects) => {

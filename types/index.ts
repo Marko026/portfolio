@@ -14,3 +14,15 @@ export interface allProjects {
   endDate: string;
   role: string;
 }
+
+export interface TechProps {
+  _id: string;
+  name: string;
+  tags: string[];
+  techImage: string;
+}
+
+export interface TagProps {
+  _id: string;
+  name: string;
+}

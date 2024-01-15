@@ -30,3 +30,18 @@ export async function getProject(slug: string) {
   const data = await client.fetch(query, {slug})
   return data
 }
+
+export async function getTechnologies() {
+  const query = `
+    *[_type=="tech"] {
+        _id,
+        name,
+        tags[]->{
+          _id,
+          name,
+        },
+        techImage
+      }`
+  const data = await client.fetch(query)
+  return data
+}
