@@ -20,6 +20,7 @@ export default {
       name: 'imageTitle',
       title: 'Image of your project',
       type: 'image',
+      validation: (Rule: any) => Rule.required().error('This field is required'),
     },
     {
       name: 'description',

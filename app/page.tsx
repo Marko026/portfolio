@@ -11,12 +11,14 @@ import { allProjects } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 10;
+
 export default async function Home() {
   const allProjects = await getProjects();
 
   return (
     <main>
-      <div className="grid gird-cols-1 md:grid-cols-2 gap-5 mt-20 ">
+      <div className="grid gird-cols-1 md:grid-cols-2 gap-5 my-20 ">
         {allProjects.map((project: allProjects) => (
           <Link href={`projects/${project.currnetSlug}`} key={project._id}>
             <Card>
