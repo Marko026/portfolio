@@ -18,8 +18,8 @@ export default {
     },
     {
       name: 'imageTitle',
-      type: 'image',
       title: 'Image of your project',
+      type: 'image',
     },
     {
       name: 'description',
