@@ -1,3 +1,4 @@
+// todo: think whether or not we need this
 export default {
   name: 'service',
   title: 'Services',

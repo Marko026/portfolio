@@ -16,11 +16,12 @@ export default {
         hotspot: true,
       },
     },
-    {
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: 'tech'}]}],
-    },
+    // todo: remove
+    // {
+    //   name: 'tags',
+    //   title: 'Tags',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: [{type: 'tech'}]}], // wrong
+    // },
   ],
 }

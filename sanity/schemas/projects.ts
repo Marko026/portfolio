@@ -48,5 +48,12 @@ export default {
       title: 'Role',
       type: 'string',
     },
+    // todo: where is tag/technologies?
+    {
+      name: 'tags', // todo: improve naming
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'tech'}]}], 
+    },
   ],
 }

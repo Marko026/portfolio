@@ -1,13 +1,16 @@
+// todo: not needed
 export default {
   name: 'contact',
   title: 'Contact',
   type: 'document',
   fields: [
+    // todo: not needed, it's almost a fixed entity/data
     {
       name: 'title',
       title: 'Contact Title',
       type: 'string',
     },
+    // todo: not needed, it's almost a fixed entity/data
     {
       name: 'subtitle',
       title: 'Subtitle',

@@ -1,3 +1,4 @@
+// todo: remove this
 export default {
   name: 'hero',
   title: 'Hero',
