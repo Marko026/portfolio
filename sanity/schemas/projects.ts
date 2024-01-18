@@ -23,37 +23,71 @@ export default {
       validation: (Rule: any) => Rule.required().error('This field is required'),
     },
     {
-      name: 'description',
-      type: 'text',
-      title: 'Description',
-    },
-    {
-      name: 'content',
-      type: 'array',
-      title: 'Content',
-      of: [{type: 'block'}],
-    },
-    {
-      name: 'startDate',
-      title: 'Start Date',
-      type: 'date',
-    },
-    {
-      name: 'endDate',
-      title: 'End Date',
-      type: 'date',
-    },
-    {
-      name: 'role',
-      title: 'Role',
+      name: 'subtitle',
+      title: 'Subtitle ',
       type: 'string',
     },
-    // todo: where is tag/technologies?
     {
-      name: 'tags', // todo: improve naming
-      title: 'Tags',
+      name: 'overview',
+      title: 'Overview',
+      type: 'text',
+    },
+    {
+      name: 'problem',
+      title: 'Problem',
+      type: 'text',
+    },
+    {
+      name: 'tags',
+      title: 'Technologies',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'tech'}]}], 
+      of: [{type: 'reference', to: [{type: 'technologies'}]}],
+    },
+    {
+      name: 'reflection',
+      title: 'Reflection',
+      type: 'text',
+    },
+    {
+      name: 'finalSite',
+      title: 'Final Site',
+      type: 'object',
+      fields: [
+        {
+          name: 'link',
+          title: 'Link',
+          type: 'url',
+        },
+      ],
+    },
+    {
+      name: 'learnings',
+      title: 'Learnings',
+      type: 'array',
+      of: [
+        {
+          name: 'learning',
+          title: 'Learning',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'challenges',
+      title: 'Challenges',
+      type: 'array',
+      of: [
+        {
+          name: 'challenge',
+          title: 'Challenge',
+          type: 'string',
+        },
+      ],
+    },
+    {
+      name: 'future',
+      title: 'Future',
+      type: 'text',
     },
   ],
 }

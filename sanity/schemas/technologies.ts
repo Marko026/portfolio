@@ -1,5 +1,5 @@
 export default {
-  name: 'tech',
+  name: 'technologies',
   title: 'Technologies',
   type: 'document',
   fields: [
@@ -16,12 +16,5 @@ export default {
         hotspot: true,
       },
     },
-    // todo: remove
-    // {
-    //   name: 'tags',
-    //   title: 'Tags',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: [{type: 'tech'}]}], // wrong
-    // },
   ],
 }

@@ -4,15 +4,11 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title', // project title
+      name: 'title',
       title: 'Title',
       type: 'string',
     },
-    // {
-    //   name: 'subtitle',
-    //   title: 'Subtitle',
-    //   type: 'string',
-    // },
+
     {
       name: 'challenges',
       title: 'Challenges',
@@ -22,17 +18,6 @@ export default {
           name: 'challenge',
           title: 'Challenge',
           type: 'string',
-        },
-      ],
-    },
-    // TODO: change this an array of string text
-    {
-      name: 'learnings',
-      title: 'Learnings',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
         },
       ],
     },
