@@ -9,7 +9,7 @@ const CaseStudies = async () => {
   const allCaseStudies = await getProjects();
 
   return (
-    <div className="grid gird-cols-1 md:grid-cols-2 gap-5 my-20 ">
+    <div className="grid gird-cols-1 md:grid-cols-2 gap-5 mt-20 ">
       {allCaseStudies.map((project: allProjects) => (
         <ProjectCard project={project} key={project._id} />
       ))}

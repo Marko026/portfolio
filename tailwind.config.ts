@@ -12,7 +12,7 @@ const config: Config = {
         text: "text",
       },
       fontFamily: {
-        figTree: ["Figtree", "sans-serif"],
+        figTree: ["FigTree", "sans-serif"],
       },
       colors: {
         white: {
@@ -24,13 +24,9 @@ const config: Config = {
           200: "#191939",
         },
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
     },
   },
+  variants: {},
   plugins: [require("tailwindcss-animate")],
 };
 export default config;

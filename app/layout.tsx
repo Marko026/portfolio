@@ -15,9 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-figTree">
+      <body className="font-figTree relative  bg-[#03031C] ">
         <ThemeProvider attribute="class" disableTransitionOnChange>
-          <main>
+          <main
+            className="bg-no-repeat bg-cover bg-center h-screen pt-16"
+            style={{ background: `url(/squer.svg)` }}>
             <div className="max-w-7xl mx-auto">
               <Navbar />
               {children}
