@@ -9,10 +9,21 @@ const CaseStudies = async () => {
   const allCaseStudies = await getProjects();
 
   return (
-    <div className="grid gird-cols-1 md:grid-cols-2 gap-5 mt-20 ">
-      {allCaseStudies.map((project: allProjects) => (
-        <ProjectCard project={project} key={project._id} />
-      ))}
+    <div>
+      <div className=" max-w-4xl mx-auto text-center mt-28">
+        <h1 className="h1-semibold ">
+          Passionate About Crafting Functional Online Experiences
+        </h1>
+        <p className="paragraph-regular">
+          Dive into a spectrum of projects that reflect my passion, skill, and
+          commitment
+        </p>
+      </div>
+      <div className=" flex flex-col max-w-2xl gap-5 mt-28 ">
+        {allCaseStudies.map((project: allProjects) => (
+          <ProjectCard project={project} key={project._id} />
+        ))}
+      </div>
     </div>
   );
 };
