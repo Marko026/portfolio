@@ -14,12 +14,12 @@ const CaseStudies = async () => {
         <h1 className="h1-semibold ">
           Passionate About Crafting Functional Online Experiences
         </h1>
-        <p className="paragraph-regular">
+        <p className="paragraph-regular text-white-800">
           Dive into a spectrum of projects that reflect my passion, skill, and
           commitment
         </p>
       </div>
-      <div className=" flex flex-col max-w-2xl gap-5 mt-28 ">
+      <div className=" flex flex-col w-full gap-14 py-28 [&>*:nth-child(even)]:self-end [&>*:nth-child(odd)]:self-start">
         {allCaseStudies.map((project: allProjects) => (
           <ProjectCard project={project} key={project._id} />
         ))}

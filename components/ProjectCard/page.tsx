@@ -10,24 +10,25 @@ import {
 import Image from "next/image";
 import { allProjects } from "@/types";
 import { urlFor } from "@/sanity/lib/sanity";
-import Tags from "../Tags/page";
 const ProjectCard = ({ project }: { project: allProjects }) => {
   return (
-    <Link href={`/work/${project.slug}`} key={project._id}>
-      <Card>
-        <CardHeader>
+    <Link href={`/work/${project.slug}`} key={project._id} className="w-3/5 ">
+      <Card className="border-none">
+        <CardHeader className="pb-2">
           <Image
             src={urlFor(project.imageTitle).url()}
             alt={project.title}
             width={300}
             height={200}
             priority={true}
-            className="object-cover w-full h-full rounded-lg mb-3"
+            className="object-contain w-full h-full rounded-lg mb-3"
           />
           <CardTitle className="">{project.title}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p className="line-clamp-4 text-pretty">{}</p>
+        <CardContent className="pb-0">
+          <p className="base-regular text-white-800">
+            Unleashing Opportunities in Your Job Search Journey
+          </p>
         </CardContent>
       </Card>
     </Link>
