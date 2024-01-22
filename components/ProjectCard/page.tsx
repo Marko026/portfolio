@@ -14,7 +14,7 @@ const ProjectCard = ({ project }: { project: allProjects }) => {
   return (
     <Link href={`/work/${project.slug}`} key={project._id} className="w-3/6 ">
       <Card className="border-none bg-black-200">
-        <div className="bg-white rounded-xl shadow-md hover:shadow-glow duration-300">
+        <div className="bg-white rounded-xl shadow-md hover:shadow-glow duration-500">
           <CardHeader className="pb-2">
             <Image
               src={urlFor(project.imageTitle).url()}

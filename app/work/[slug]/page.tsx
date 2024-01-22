@@ -157,7 +157,7 @@ const Projects = ({ params }: any) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between my-28">
+      <div className="flex justify-between py-28">
         <div className="">
           <div className="flex items-center gap-2">
             <Image
