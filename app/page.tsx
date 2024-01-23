@@ -17,9 +17,11 @@ export default async function Home() {
           precision
         </p>
       </div>
-      <Link href="/work" className="mt-9 px-10 py-4 gradient rounded-full">
-        <div className="flex items-center gap-2">
-          <p className="paragraph-normal">See my work</p>
+      <Link
+        href="/work"
+        className="mt-9 px-10 py-4 gradient rounded-full hover:ml-5  duration-500">
+        <div className="px-6 py-4 rounded-full flex items-center gap-2 bg-gradient-to-r from-[#0026FF] to-[#C1A4FF]">
+          <p className="paragraph-normal ">See my work</p>
           <Image src="/icons/Vector.svg" width={10} height={10} alt="arrow" />
         </div>
       </Link>

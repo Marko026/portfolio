@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="px-5">
+    <section className="px-5 max-w-4xl mx-auto">
       <div className=" text-center mt-28">
         <h1 className="h1-semibold h-fit">
-          Thanks for snapping a look. Let's get in touch!{" "}
+          Thanks for snapping a look. Let's get in touch!
         </h1>
       </div>
       <div className="flex justify-between gap-3 flex-wrap mx-auto py-20">
@@ -14,7 +14,7 @@ const Contact = () => {
           href="
           https://www.linkedin.com/in/morrent/"
           target="_blank"
-          className="grow  basis-2/5 lg:basis-1/5  bg-black-200 bg-opacity-20 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
+          className="grow  sm:basis-2/5 lg:basis-1/5  bg-black-200 bg-opacity-20 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
           <Image
             src="/github.svg"
             width={20}
@@ -28,7 +28,7 @@ const Contact = () => {
           href="
           /vector-1.svg"
           target="_blank"
-          className="grow basis-2/5 lg:basis-1/5 bg-black-200 bg-opacity-20  backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
+          className="grow sm:basis-2/5 lg:basis-1/5 bg-black-200 bg-opacity-20  backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
           <Image
             src="/x.svg"
             width={20}
@@ -42,7 +42,7 @@ const Contact = () => {
           href="
           https://twitter.com/morrent_"
           target="_blank"
-          className="grow basis-2/5  lg:basis-1/5 bg-black-200 bg-opacity-20 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7  ">
+          className="grow sm:basis-2/5  lg:basis-1/5 bg-black-200 bg-opacity-20 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7  ">
           <Image
             src="/t.svg"
             width={20}
@@ -56,7 +56,7 @@ const Contact = () => {
           href="
           https://www.facebook.com/morrent"
           target="_blank"
-          className="grow basis-2/5  lg:basis-1/5  bg-black-200 bg-opacity-20 backdrop-blur-xl	 flex items-center justify-center rounded-[8px] py-3 px-7 ">
+          className="grow sm:basis-2/5  lg:basis-1/5  bg-black-200 bg-opacity-20 backdrop-blur-xl	 flex items-center justify-center rounded-[8px] py-3 px-7 ">
           <Image
             src="/instagram.svg"
             width={20}

@@ -14,7 +14,7 @@ const CaseStudies = async () => {
         <h1 className="h1-semibold ">
           Passionate About Crafting Functional Online Experiences
         </h1>
-        <p className="paragraph-regular text-white-800">
+        <p className="paragraph-regular text-white-800 mt-6">
           Dive into a spectrum of projects that reflect my passion, skill, and
           commitment
         </p>
