@@ -29,6 +29,7 @@ export default async function Home() {
         src="/images/dev.png"
         width={850}
         height={567}
+        priority
         className="object-cover"
         alt="dev"
       />

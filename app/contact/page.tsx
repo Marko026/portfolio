@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,7 +10,7 @@ const Contact = () => {
           Thanks for snapping a look. Let's get in touch!
         </h1>
       </div>
-      <div className="flex justify-between gap-3 flex-wrap mx-auto py-20">
+      <div className="flex justify-between gap-3 flex-wrap mx-auto py-20 mb-[200px]">
         <Link
           href="
           https://www.linkedin.com/in/morrent/"
@@ -74,6 +75,7 @@ const Contact = () => {
           @markectodorovic@gmail.com
         </Link>
       </div>
+      <Footer />
     </section>
   );
 };

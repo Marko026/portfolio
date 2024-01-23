@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/page";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -183,6 +184,7 @@ const Projects = ({ params }: any) => {
           <p className="text-white-800">Filmpire - AI Movie App</p>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
