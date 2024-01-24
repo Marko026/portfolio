@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .h1-semibold {
-  @apply text-[32px] md:text-[64px] font-extrabold leading-[42px] md:leading-[70px] tracking-[-2%];
+  @apply text-[32px] md:text-[64px] font-extrabold leading-[40px] md:leading-[70px] tracking-[-2%];
 }
 
 .h2-normal {
@@ -24,7 +24,7 @@
   @apply text-[24px] font-semibold leading-[46px] tracking-[-2%];
 }
 .paragraph-regular {
-  @apply text-[18px] md:text-[21px] font-normal leading-[26.4px] tracking-[-2%];
+  @apply text-[15px] md:text-[21px] font-normal leading-[26.4px] tracking-[-2%];
 }
 .paragraph-semibold {
   @apply text-[21px] font-semibold leading-[26.4px] tracking-[-2%];

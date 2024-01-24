@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex justify-between items-center mb-10">
+    <footer className="flex justify-between flex-col sm:flex-row items-center text-xs md:text-sm mb-10">
       <p className="text-white-800">
         &copy; 2024 Marko Todorovic created with ❤️
       </p>
