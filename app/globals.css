@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 .h1-semibold {
-  @apply text-[64px] font-extrabold leading-[70px] tracking-[-2%];
+  @apply text-[32px] md:text-[64px] font-extrabold leading-[42px] md:leading-[70px] tracking-[-2%];
 }
 
 .h2-normal {
-  @apply text-[40px] font-semibold leading-[56px] tracking-[-2%];
+  @apply text-[20px] sm:text-[30px] lg:text-[40px] font-semibold xl:leading-[56px] tracking-[-2%];
 }
 .h2-semibold {
   @apply text-[48px] font-semibold leading-[56px] tracking-[-2%];
@@ -18,13 +18,13 @@
   @apply text-[32px] font-semibold leading-[46px] tracking-[-2%];
 }
 .base-regular {
-  @apply text-[24px] font-normal leading-[36px] tracking-[-2%];
+  @apply text-[15px] sm:text-[18px] lg:text-[24px] font-normal lg:leading-[36px] tracking-[-2%];
 }
 .base-semibold {
   @apply text-[24px] font-semibold leading-[46px] tracking-[-2%];
 }
 .paragraph-regular {
-  @apply text-[21px] font-normal leading-[26.4px] tracking-[-2%];
+  @apply text-[18px] md:text-[21px] font-normal leading-[26.4px] tracking-[-2%];
 }
 .paragraph-semibold {
   @apply text-[21px] font-semibold leading-[26.4px] tracking-[-2%];

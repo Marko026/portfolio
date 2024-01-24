@@ -10,8 +10,8 @@ const CaseStudies = async () => {
 
   return (
     <div>
-      <div className=" max-w-4xl mx-auto text-center mt-28">
-        <h1 className="h1-semibold ">
+      <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
+        <h1 className="h1-semibold">
           Passionate About Crafting Functional Online Experiences
         </h1>
         <p className="paragraph-regular text-white-800 mt-6">
@@ -19,7 +19,7 @@ const CaseStudies = async () => {
           commitment
         </p>
       </div>
-      <div className=" flex flex-col w-full gap-14 py-28 [&>*:nth-child(even)]:self-end [&>*:nth-child(odd)]:self-start">
+      <div className=" flex flex-col w-full gap-7 sm:gap-14 py-10 md:py-28 sm:[&>*:nth-child(even)]:self-end sm:[&>*:nth-child(odd)]:self-start">
         {allCaseStudies.map((project: allProjects) => (
           <ProjectCard project={project} key={project._id} />
         ))}
