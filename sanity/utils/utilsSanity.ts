@@ -5,6 +5,7 @@ export async function getProjects() {
       _id,
       title,
       subtitle,
+      problem,
       "slug":slug.current,
       imageTitle,
       overview,
@@ -12,7 +13,7 @@ export async function getProjects() {
       finalSite,
       learnings,
       challenges,
-      featured,
+      future,
       tags[]->{
         _id,
         name,
@@ -24,18 +25,30 @@ export async function getProjects() {
 }
 
 export async function getProject(slug: string) {
-  const query = `*[_type=="project" && slug.current==$slug] {
+  const query = `*[_type=="project" && slug.current==$slug][0] {
     _id,
     title,
-      "slug":slug.current,
-      description,
-      imageTitle,
-      content,
-      startDate,
-      endDate,
-      role,
-      }`
-
+    subtitle,
+    "slug":slug.current,
+    imageTitle{
+      asset->{
+        _id,
+        url
+      }
+    },
+    overview,
+    reflection,
+    finalSite,
+    learnings,
+    problem,
+    challenges,
+    future,
+    tags[]->{
+      _id,
+      name,
+      "techImage": techImage.asset->url
+    }
+  }`
   const data = await client.fetch(query, {slug})
   return data
 }

@@ -42,6 +42,7 @@ export default {
       title: 'Technologies',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'technologies'}]}],
+      validation: (Rule: any) => Rule.required().error('This field is required'),
     },
     {
       name: 'reflection',
@@ -57,6 +58,14 @@ export default {
           name: 'link',
           title: 'Link',
           type: 'url',
+        },
+        {
+          name: 'siteImage',
+          title: 'Site Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
         },
       ],
     },

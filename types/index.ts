@@ -15,9 +15,11 @@ type LearningsProps = {
 export interface allProjects {
   params: Params;
   _id: string;
+  subtitle: string;
   title: string;
   slug: string;
   imageTitle: string;
+  problem: string;
   tags: TagProps[];
   overview: string;
   reflection: string;
@@ -26,16 +28,20 @@ export interface allProjects {
   };
   learnings: LearningsProps[];
   challenges: ChallengesProps[];
-  featured: string;
+  future: string;
 }
 
-export interface TechProps {
+interface Tag {
+  _id: string;
+}
+
+export interface TagProps {
+  tag: Tag;
   _id: string;
   name: string;
   techImage: string;
 }
 
-export interface TagProps {
-  _id: string;
-  name: string;
+export interface TechProps {
+  tag: TagProps;
 }

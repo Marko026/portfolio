@@ -1,12 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { allProjects } from "@/types";
 import { urlFor } from "@/sanity/lib/sanity";
@@ -33,9 +27,7 @@ const ProjectCard = ({ project }: { project: allProjects }) => {
             <CardTitle className="h2-normal !mb-2">{project.title}</CardTitle>
           </CardHeader>
           <CardContent className="!p-0 ">
-            <p className="base-regular text-white-800 ">
-              Unleashing Opportunities in Your Job Search Journey
-            </p>
+            <p className="base-regular text-white-800 ">{project.subtitle}</p>
           </CardContent>
         </div>
       </Card>
