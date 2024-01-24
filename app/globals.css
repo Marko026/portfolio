@@ -8,7 +8,7 @@
 }
 
 .h2-normal {
-  @apply text-[20px] sm:text-[30px] lg:text-[40px] font-semibold xl:leading-[56px] tracking-[-2%];
+  @apply text-[20px] sm:text-[24px] lg:text-[40px] font-semibold xl:leading-[56px] tracking-[-2%];
 }
 .h2-semibold {
   @apply text-[48px] font-semibold leading-[56px] tracking-[-2%];
