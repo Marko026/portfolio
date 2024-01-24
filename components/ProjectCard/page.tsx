@@ -15,8 +15,8 @@ const ProjectCard = ({ project }: { project: allProjects }) => {
     <Link
       href={`/work/${project.slug}`}
       key={project._id}
-      className="md:w-[55%]">
-      <Card className="border-none bg-black-200 p-3 shadow-md hover:shadow-glow duration-500">
+      className="md:w-[55%] relative">
+      <Card className="border-none bg-black-200 p-3 shadow-md hover:shadow-glow duration-300">
         <div className="bg-white rounded-xl ">
           <CardHeader className="!p-0">
             <Image

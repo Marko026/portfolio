@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function Home() {
   return (
     <div className="flex flex-col items-center mt-10 md:mt-20 ">
-      <div className="max-w-3xl text-center">
+      <div className="max-w-4xl text-center">
         <h1 className="h1-semibold mb-4">
           Hi! I'am&nbsp;
           <span className="gradient-text">Marko</span>
