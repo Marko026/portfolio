@@ -2,26 +2,16 @@ import {client} from '../lib/sanity'
 
 export async function getProjects() {
   const query = `*[_type=="project"] | order(_createdAt asc) {
-    _id,
-    title,
+      _id,
+      title,
+      subtitle,
       "slug":slug.current,
-      description,
       imageTitle,
-    overview,
+      overview,
       reflection,
-      finalSite->{
-        link,
-      },
-      learnings->{
-        _id,
-        title,
-        challenges,
-      },
-      challenges->{
-        _id,
-        title,
-        challenges,
-      },
+      finalSite,
+      learnings,
+      challenges,
       featured,
       tags[]->{
         _id,

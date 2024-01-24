@@ -1,5 +1,4 @@
 import ProjectCard from "@/components/ProjectCard/page";
-import Tags from "@/components/Tags/page";
 import { getProjects } from "@/sanity/utils/utilsSanity";
 import { allProjects } from "@/types";
 import React from "react";
