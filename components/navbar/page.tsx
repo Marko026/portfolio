@@ -27,7 +27,7 @@ const Navbar = () => {
             </p>
 
             <Image
-              src="/public/icons/indicator.svg"
+              src="/images/indicator.svg"
               width={8}
               height={8}
               alt="indicator"
