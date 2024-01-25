@@ -3,16 +3,17 @@ import Footer from "@/components/Footer/page";
 import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
 import Learnings from "@/components/Learnings/page";
-import { getProject } from "@/sanity/utils/utilsSanity";
+import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
 import { TagProps, allProjects } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
-export const revalidate = 30;
+import NextStudyButton from "@/components/NextStudyButton/page";
+import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 
 const Project = async ({ params }: allProjects) => {
   const project = await getProject(params.slug);
+  const projects = await getProjects();
 
   return (
     <div>
@@ -30,6 +31,7 @@ const Project = async ({ params }: allProjects) => {
           alt="hero"
           width={500}
           height={500}
+          priority={true}
           className="w-full h-full rounded-lg mt-10 mb-10 sm:mb-20 max-h-[680px]"
         />
       </div>
@@ -72,6 +74,7 @@ const Project = async ({ params }: allProjects) => {
                 src="/icons/Vector.svg"
                 width={15}
                 height={15}
+                priority={true}
                 alt="arrow"
                 className="sm:inline-block ml-2"
               />
@@ -84,6 +87,7 @@ const Project = async ({ params }: allProjects) => {
                 alt="hero"
                 width={500}
                 height={500}
+                priority={true}
                 className=" w-full my-10 mx-16 max-h-[532px]"
               />
             </div>
@@ -113,34 +117,8 @@ const Project = async ({ params }: allProjects) => {
         </div>
       </div>
       <div className="flex justify-between  py-10 sm:py-28">
-        <div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-            <Image
-              src="/icons/arrow-left.svg"
-              alt="hero"
-              width={30}
-              height={30}
-            />
-            <p className="text-sm sm:text-2xl font-bold">Previous Study</p>
-          </div>
-          <p className="text-white-800 text-xs  sm:text-sm">
-            JobIT - Job Finding App
-          </p>
-        </div>
-        <div>
-          <div className="flex flex-col-reverse sm:flex-row items-end  sm:items-center gap-2">
-            <p className="text-sm sm:text-2xl font-bold">Previous Study</p>
-            <Image
-              src="/icons/arrow-right.svg"
-              alt="hero"
-              width={30}
-              height={30}
-            />
-          </div>
-          <p className="text-white-800 text-xs sm:text-sm">
-            Filmpire - AI Movie App
-          </p>
-        </div>
+        <PreviousStudyButton slug={params.slug} projects={projects} />
+        <NextStudyButton slug={params.slug} projects={projects} />
       </div>
       <Footer />
     </div>

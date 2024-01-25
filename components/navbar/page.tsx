@@ -31,6 +31,7 @@ const Navbar = () => {
               width={8}
               height={8}
               alt="indicator"
+              priority={true}
               className={`absolute
               ${path === page.path ? "block" : "hidden"}
               md:bottom-[-17px] right-[50%] animate-pulse transform -translate-x-50% rounded-full`}

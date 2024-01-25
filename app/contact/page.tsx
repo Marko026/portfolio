@@ -21,6 +21,7 @@ const Contact = () => {
               width={20}
               height={20}
               alt={link.alt}
+              priority={true}
               className="inline-block ml-2 "
             />
             <span className="ml-3">{link.text}</span>
