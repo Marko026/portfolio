@@ -17,7 +17,9 @@ export async function getProjects() {
       tags[]->{
         _id,
         name,
-      }
+      },
+    workInProgress
+
       }`
 
   const data = await client.fetch(query)
@@ -47,7 +49,8 @@ export async function getProject(slug: string) {
       _id,
       name,
       "techImage": techImage.asset->url
-    }
+    },
+    workInProgress
   }`
   const data = await client.fetch(query, {slug})
   return data

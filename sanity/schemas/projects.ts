@@ -98,5 +98,10 @@ export default {
       title: 'Future',
       type: 'text',
     },
+    {
+      name: 'workInProgress',
+      title: 'Work in Progress',
+      type: 'boolean',
+    },
   ],
 }

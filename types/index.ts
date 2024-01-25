@@ -29,6 +29,7 @@ export interface allProjects {
   learnings: LearningsProps[];
   challenges: ChallengesProps[];
   future: string;
+  workInProgress: boolean;
 }
 
 interface Tag {
