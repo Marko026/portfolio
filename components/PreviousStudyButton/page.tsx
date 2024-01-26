@@ -19,10 +19,9 @@ const PreviousButton = ({ slug, projects }: Props) => {
     previousProject.current = projects[currentIndex - 1];
   }, [slug, projects]);
   const handlePrevious = () => {
-    if (previousProject) {
-      if (previousProject.current) {
-        router.push(`/work/${previousProject.current.slug}`);
-      }
+    if (previousProject.current?.workInProgress) return;
+    if (previousProject.current) {
+      router.push(`/work/${previousProject.current.slug}`);
     }
   };
 

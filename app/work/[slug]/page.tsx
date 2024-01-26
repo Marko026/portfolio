@@ -11,9 +11,13 @@ import React from "react";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 
+export const revalidate = 30;
+
 const Project = async ({ params }: allProjects) => {
   const project = await getProject(params.slug);
   const projects = await getProjects();
+
+  const textSplit = project.title.split("-");
 
   return (
     <div>
@@ -21,8 +25,9 @@ const Project = async ({ params }: allProjects) => {
         <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
           <h1 className="h1-semibold mb-3">
             <span className="bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] bg-clip-text text-transparent">
-              {project.title}
+              {textSplit[0]}
             </span>
+            <span>{`-${textSplit[1]}`}</span>
           </h1>
           <p className="paragraph-regular text-white-800">{project.subtitle}</p>
         </div>

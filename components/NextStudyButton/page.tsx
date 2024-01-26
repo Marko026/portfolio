@@ -18,7 +18,10 @@ const NextStudyButton = ({ slug, projects }: Props) => {
     currenProject.current = projects[currentIndex];
     nextProject.current = projects[currentIndex + 1];
   }, [slug, projects]);
+
   const handleNext = () => {
+    if (nextProject.current?.workInProgress) return;
+
     if (nextProject.current) {
       router.push(`/work/${nextProject.current.slug}`);
     }
