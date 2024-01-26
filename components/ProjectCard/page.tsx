@@ -28,7 +28,7 @@ const ProjectCard = ({ project }: { project: allProjects }) => {
                     priority={true}
                     className={`object-contain w-full h-full rounded-lg md:mb-3`}
                   />
-                  <div className="absolute left-0 right-0 h-1/3 bottom-0 bg-gradient-to-t from-black-200 to bg-transparent"></div>
+                  <div className="absolute left-0 right-0 h-full bottom-0 bg-gradient-to-t from-black-200  to bg-transparent"></div>
                 </div>
                 <CardTitle className="h2-normal !mb-2">
                   {project.title}
