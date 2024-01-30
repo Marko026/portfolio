@@ -1,7 +1,7 @@
+import React from "react";
 import ProjectCard from "@/components/ProjectCard/page";
 import { getProjects } from "@/sanity/utils/utilsSanity";
 import { AllProjects } from "@/types";
-import React from "react";
 
 export const revalidate = 30;
 

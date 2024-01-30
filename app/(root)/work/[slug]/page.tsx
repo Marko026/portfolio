@@ -12,7 +12,7 @@ import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 
 export const revalidate = 30;
 
-const Project = async ({ params }: AllProjects) => {
+const ProjectDetails = async ({ params }: AllProjects) => {
   const project = await getProject(params.slug);
   const projects = await getProjects();
 
@@ -128,4 +128,4 @@ const Project = async ({ params }: AllProjects) => {
   );
 };
 
-export default Project;
+export default ProjectDetails;
