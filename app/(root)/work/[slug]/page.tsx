@@ -1,10 +1,9 @@
 import Challenges from "@/components/Challenges/page";
-import Footer from "@/components/Footer/page";
 import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
 import Learnings from "@/components/Learnings/page";
 import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
-import { TagProps, allProjects } from "@/types";
+import { TagProps, AllProjects } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -13,7 +12,7 @@ import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 
 export const revalidate = 30;
 
-const Project = async ({ params }: allProjects) => {
+const Project = async ({ params }: AllProjects) => {
   const project = await getProject(params.slug);
   const projects = await getProjects();
 

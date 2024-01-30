@@ -12,7 +12,7 @@ type LearningsProps = {
   challenges: string;
 };
 
-export interface allProjects {
+export interface AllProjects {
   params: Params;
   _id: string;
   subtitle: string;
