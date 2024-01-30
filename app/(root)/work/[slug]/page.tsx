@@ -1,3 +1,4 @@
+import React from "react";
 import Challenges from "@/components/Challenges/page";
 import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
@@ -6,7 +7,6 @@ import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
 import { TagProps, AllProjects } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 

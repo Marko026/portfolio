@@ -1,12 +1,12 @@
-interface Params {
+export interface Params {
   slug: string;
 }
-type ChallengesProps = {
+export type ChallengesProps = {
   _id: string;
   title: string;
   challenges: string;
 };
-type LearningsProps = {
+export type LearningsProps = {
   _id: string;
   title: string;
   challenges: string;
@@ -32,7 +32,7 @@ export interface AllProjects {
   workInProgress: boolean;
 }
 
-interface Tag {
+export interface Tag {
   _id: string;
 }
 
