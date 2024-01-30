@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
-import { getInTouch } from "@/lib/actions/contact-action";
 
 const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -27,10 +26,16 @@ const ContactForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const { name, email, text } = values;
-    console.log(values);
-
-    await getInTouch(name, email, text);
+    const respond = await fetch("api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
+    const data = await respond.json();
+    console.log(data);
+    return data;
   }
   return (
     <Form {...form}>
