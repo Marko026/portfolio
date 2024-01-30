@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/ProjectCard/page";
 import { getProjects } from "@/sanity/utils/utilsSanity";
-import { allProjects } from "@/types";
+import { AllProjects } from "@/types";
 import React from "react";
 
 export const revalidate = 30;
@@ -20,7 +20,7 @@ const CaseStudies = async () => {
         </p>
       </div>
       <div className=" flex flex-col w-full gap-7 sm:gap-14 py-10 md:py-28 sm:[&>*:nth-child(even)]:self-end sm:[&>*:nth-child(odd)]:self-start">
-        {allCaseStudies.map((project: allProjects) => (
+        {allCaseStudies.map((project: AllProjects) => (
           <ProjectCard project={project} key={project._id} />
         ))}
       </div>

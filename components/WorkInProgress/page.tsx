@@ -2,9 +2,9 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/sanity";
-import { allProjects } from "@/types";
+import { AllProjects } from "@/types";
 
-const WorkInProgress = ({ project }: { project: allProjects }) => {
+const WorkInProgress = ({ project }: { project: AllProjects }) => {
   return (
     <div className="md:w-[55%]">
       <Card className="border-none bg-black-200 p-4 shadow-md hover:shadow-glow duration-300">

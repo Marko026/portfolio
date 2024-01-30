@@ -2,11 +2,11 @@ import Link from "next/link";
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
-import { allProjects } from "@/types";
+import { AllProjects } from "@/types";
 import { urlFor } from "@/sanity/lib/sanity";
 import WorkInProgress from "../WorkInProgress/page";
 
-const ProjectCard = ({ project }: { project: allProjects }) => {
+const ProjectCard = ({ project }: { project: AllProjects }) => {
   return (
     <>
       {project.workInProgress === true ? (

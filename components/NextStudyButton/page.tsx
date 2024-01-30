@@ -1,17 +1,17 @@
 "use client";
-import { allProjects } from "@/types";
+import { AllProjects } from "@/types";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useRef } from "react";
 
 type Props = {
   slug: string;
-  projects: allProjects[];
+  projects: AllProjects[];
 };
 const NextStudyButton = ({ slug, projects }: Props) => {
   const router = useRouter();
-  const currenProject = useRef<allProjects | null>(null);
-  const nextProject = useRef<allProjects | null>(null);
+  const currenProject = useRef<AllProjects | null>(null);
+  const nextProject = useRef<AllProjects | null>(null);
 
   useEffect(() => {
     const currentIndex = projects.findIndex((project) => project.slug === slug);
