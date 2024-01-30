@@ -8,14 +8,19 @@ export async function POST(request: any) {
     console.log(body);
 
     const { name, email, text } = body;
-    const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
-      to: email,
-      subject: "Hello Marko",
-      react: `${name} ${text}`,
+
+    const emailResponse = await resend.emails.send({
+      from: `${name} <onboarding@resend.dev> `,
+      to: [`markectodorovic@gmail.com`],
+      subject: `Hello from ${name}`,
+      react: `${text} ${email}`,
     });
-    if (!data) return NextResponse.json({ error: "Something went wrong" });
-    return NextResponse.json({ data });
+
+    if (!emailResponse) {
+      return NextResponse.json({ error: "Something went wrong" });
+    }
+
+    return NextResponse.json({ data: emailResponse });
   } catch (error) {
     return NextResponse.json({ error });
   }
