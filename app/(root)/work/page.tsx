@@ -11,7 +11,7 @@ const CaseStudies = async () => {
   return (
     <div>
       <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
-        <h1 className="h1-semibold">
+        <h1 className="h1-semibold text-white-900">
           Passionate About Crafting Functional Online Experiences
         </h1>
         <p className="paragraph-regular text-white-800 mt-6">

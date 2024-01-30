@@ -29,7 +29,6 @@ const Contact = () => {
           </Link>
         ))}
       </div>
-      <Footer />
     </section>
   );
 };

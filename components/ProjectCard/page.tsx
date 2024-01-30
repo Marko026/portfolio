@@ -30,12 +30,12 @@ const ProjectCard = ({ project }: { project: allProjects }) => {
                   />
                   <div className="absolute left-0 right-0 h-full bottom-0 bg-gradient-to-t from-black-200  to bg-transparent"></div>
                 </div>
-                <CardTitle className="h2-normal !mb-2">
+                <CardTitle className="h2-normal !mb-2 text-white-900">
                   {project.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="!p-0 ">
-                <p className="base-regular text-white-800 ">
+                <p className="base-regular text-white-800">
                   {project.subtitle}
                 </p>
               </CardContent>

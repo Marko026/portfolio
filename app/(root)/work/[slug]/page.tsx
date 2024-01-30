@@ -125,7 +125,6 @@ const Project = async ({ params }: allProjects) => {
         <PreviousStudyButton slug={params.slug} projects={projects} />
         <NextStudyButton slug={params.slug} projects={projects} />
       </div>
-      <Footer />
     </div>
   );
 };
