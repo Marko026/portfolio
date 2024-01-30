@@ -35,7 +35,9 @@ const PreviousButton = ({ slug, projects }: Props) => {
           height={30}
           priority={true}
         />
-        <p className="text-sm sm:text-2xl font-bold">Previous Study</p>
+        <p className="text-sm sm:text-2xl font-bold text-white-900">
+          Previous Study
+        </p>
       </div>
       <p className="text-white-800 text-xs  sm:text-sm">
         JobIT - Job Finding App

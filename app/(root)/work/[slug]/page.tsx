@@ -27,7 +27,7 @@ const Project = async ({ params }: allProjects) => {
             <span className="bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] bg-clip-text text-transparent">
               {textSplit[0]}
             </span>
-            <span>{`-${textSplit[1]}`}</span>
+            <span className="text-white-900">{`-${textSplit[1]}`}</span>
           </h1>
           <p className="paragraph-regular text-white-800">{project.subtitle}</p>
         </div>

@@ -25,7 +25,9 @@ const WorkInProgress = ({ project }: { project: allProjects }) => {
                 Work in Progress
               </p>
             </div>
-            <CardTitle className="h2-normal !mb-2">{project.title}</CardTitle>
+            <CardTitle className="h2-normal !mb-2 text-white-900">
+              {project.title}
+            </CardTitle>
           </CardHeader>
           <CardContent className="!p-0 ">
             <p className="base-regular text-white-800 ">{project.subtitle}</p>

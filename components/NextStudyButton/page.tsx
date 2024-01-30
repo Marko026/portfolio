@@ -30,7 +30,9 @@ const NextStudyButton = ({ slug, projects }: Props) => {
   return (
     <div onClick={handleNext} className="cursor-pointer">
       <div className="flex flex-col-reverse sm:flex-row items-end  sm:items-center gap-2">
-        <p className="text-sm sm:text-2xl font-bold">Next Study</p>
+        <p className="text-sm sm:text-2xl font-bold text-white-900">
+          Next Study
+        </p>
         <Image
           src="/icons/arrow-right.svg"
           alt="hero"
