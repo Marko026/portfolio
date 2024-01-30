@@ -4,7 +4,7 @@ import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
 import Learnings from "@/components/Learnings/page";
 import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
-import { TagProps, AllProjects } from "@/types";
+import { TagProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import NextStudyButton from "@/components/NextStudyButton/page";
@@ -12,7 +12,7 @@ import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 
 export const revalidate = 30;
 
-const ProjectDetails = async ({ params }: AllProjects) => {
+const ProjectDetails = async ({ params }: { params: any }) => {
   const project = await getProject(params.slug);
   const projects = await getProjects();
 
