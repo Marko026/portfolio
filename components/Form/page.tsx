@@ -46,9 +46,12 @@ const ContactForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="Name" {...field} />
+                <Input
+                  className="inputStyle text-md "
+                  placeholder="Name"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
@@ -59,9 +62,12 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="Your Email" {...field} />
+                <Input
+                  className="inputStyle text-md"
+                  placeholder="Your Email"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
@@ -73,13 +79,17 @@ const ContactForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Textarea placeholder="Message..." {...field} />
+                <Textarea
+                  placeholder="Message..."
+                  className="inputStyle text-md"
+                  {...field}
+                />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
           )}
         />
-        <Button type="submit" className="bg-white-900">
+        <Button type="submit" className="inputStyle px-12 !h-12">
           Submit
         </Button>
       </form>

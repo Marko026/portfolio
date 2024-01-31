@@ -38,10 +38,4 @@ export const links = [
     alt: "instagram",
     text: "Instagram",
   },
-  {
-    src: "/monkey.svg",
-    href: "mailto:markectodorovic@gmail.com",
-    text: "markectodorovic@gmail.com",
-    alt: "email",
-  },
 ];
