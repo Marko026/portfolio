@@ -70,7 +70,7 @@ export const TracingBeam = ({
                 ? "none"
                 : "rgba(0, 0, 0, 0.24) 0px 3px 8px",
           }}
-          className="ml-[27px] h-4 w-4 rounded-full border border-violet-800 shadow-sm flex items-center justify-center">
+          className="ml-[27px] h-4 w-4 rounded-full border border-blue-500 shadow-sm flex items-center justify-center">
           <motion.div
             transition={{
               duration: 0.2,
@@ -78,8 +78,8 @@ export const TracingBeam = ({
             }}
             animate={{
               backgroundColor:
-                scrollYProgress.get() > 0 ? "blueviolet" : "blueviolet",
-              borderColor: scrollYProgress.get() > 0 ? "" : "black",
+                scrollYProgress.get() > 0 ? "royalblue" : "royalblue",
+              borderColor: scrollYProgress.get() > 0 ? "" : "royalblue",
             }}
             className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />
