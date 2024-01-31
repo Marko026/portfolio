@@ -4,7 +4,7 @@ type LearningProps = {
 };
 
 const Learnings = ({ learning }: LearningProps) => {
-  return <li>{learning}</li>;
+  return <li className="text-left text-white-800">{learning}</li>;
 };
 
 export default Learnings;

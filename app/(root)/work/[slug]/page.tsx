@@ -9,6 +9,7 @@ import Image from "next/image";
 import Link from "next/link";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
+import { TracingBeam } from "@/components/ui/tracing-beam";
 
 export const revalidate = 30;
 
@@ -19,7 +20,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
   const textSplit = project.title.split("-");
 
   return (
-    <div>
+    <TracingBeam>
       <div>
         <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
           <h1 className="h1-semibold mb-3">
@@ -115,7 +116,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
           <h2 className="w-1/4 h2-normal mb-3">Future</h2>
-          <div className="sm:w-3/4 w-full base-regular text-white-800">
+          <div className="sm:w-3/4 w-full base-regular text-left text-white-800">
             {project.future}
           </div>
         </div>
@@ -124,7 +125,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         <PreviousStudyButton slug={params.slug} projects={projects} />
         <NextStudyButton slug={params.slug} projects={projects} />
       </div>
-    </div>
+    </TracingBeam>
   );
 };
 

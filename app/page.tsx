@@ -1,3 +1,4 @@
+import { SpotlightPreview } from "@/components/SpotlightPreview/page";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -5,15 +6,7 @@ export default async function Home() {
   return (
     <div className="flex flex-col items-center mt-10 md:mt-20 ">
       <div className="max-w-4xl text-center">
-        <h1 className="h1-semibold mb-4 text-white-900">
-          Hi! I'am&nbsp;
-          <span className="gradient-text text-white-900">Marko</span>
-          ,a Next.js Developer base in Austria
-        </h1>
-        <p className="paragraph-regular text-white-800">
-          Web developer creating top-notch digital experiences with passion and
-          precision
-        </p>
+        <SpotlightPreview />
         <Link
           href="/work"
           className="mt-9 px-10 inline-block py-4 gradient rounded-full hover:scale-110 duration-500">

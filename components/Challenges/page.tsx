@@ -4,7 +4,7 @@ type ChallengeProps = {
 };
 
 const Challenges = ({ challenge }: ChallengeProps) => {
-  return <li>{challenge}</li>;
+  return <li className="text-left text-white-800">{challenge}</li>;
 };
 
 export default Challenges;
