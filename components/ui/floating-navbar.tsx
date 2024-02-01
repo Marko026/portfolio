@@ -43,7 +43,7 @@ export const FloatingNav = ({
     setVisible(false);
     setTimeout(() => {
       setVisible(true);
-    }, 900);
+    }, 1500);
   }, [path]);
 
   return (
