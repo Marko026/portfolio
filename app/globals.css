@@ -45,14 +45,14 @@
   @apply bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] bg-clip-text text-transparent;
 }
 .shadow-glow {
-  box-shadow: 0 0 3px 0 rgba(193, 164, 255, 0.8),
-    0 0 6px 0 rgba(193, 164, 255, 0.8), 0 0 9px 0 rgba(193, 164, 255, 0.8),
-    0 0 12px 0 rgba(193, 164, 255, 0.8), 0 0 15px 0 rgba(193, 164, 255, 0.8);
+  box-shadow: 0 0 30px 0 rgba(193, 164, 255, 0.8),
+    0 0 12px 0 rgba(193, 164, 255, 0.8), 0 0 18px 0 rgba(193, 164, 255, 0.8),
+    0 0 24px 0 rgba(193, 164, 255, 0.8), 0 0 30px 0 rgba(193, 164, 255, 0.8);
 }
 .hover\:shadow-glow:hover {
-  box-shadow: 0 0 3px 0 rgba(193, 164, 255, 0.8),
-    0 0 6px 0 rgba(193, 164, 255, 0.8), 0 0 9px 0 rgba(193, 164, 255, 0.8),
-    0 0 12px 0 rgba(193, 164, 255, 0.8), 0 0 15px 0 rgba(193, 164, 255, 0.8);
+  box-shadow: 0 0 30px 0 rgba(193, 164, 255, 0.8),
+    0 0 12px 0 rgba(193, 164, 255, 0.8), 0 0 18px 0 rgba(193, 164, 255, 0.8),
+    0 0 24px 0 rgba(193, 164, 255, 0.8), 0 0 30px 0 rgba(193, 164, 255, 0.8);
 }
 .inputStyle {
   @apply text-white-800 shadow-md hover:shadow-glow duration-300 h-14

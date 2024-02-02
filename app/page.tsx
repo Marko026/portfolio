@@ -8,7 +8,6 @@ export default async function Home() {
     <div className="flex flex-col items-center mt-10 md:mt-20 ">
       <div className="max-w-4xl text-center m-0">
         <SpotlightPreview />
-
         <GradientShadowButton />
         <Image
           src="/images/dev.png"

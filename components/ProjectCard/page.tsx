@@ -15,21 +15,18 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
         <Link
           href={`/work/${project.slug}`}
           key={project._id}
-          className="md:w-[55%] relative">
-          <Card className="border-none bg-black-200 p-3 shadow-md hover:shadow-glow duration-300">
+          className="relative">
+          <Card className="border-none rounded-3xl  p-3 shadow-md hover:shadow-glow duration-500">
             <div className="bg-white rounded-xl ">
               <CardHeader className="!p-0">
-                <div className="relative">
-                  <Image
-                    src={urlFor(project.imageTitle).url()}
-                    alt={project.title}
-                    width={300}
-                    height={200}
-                    priority={true}
-                    className={`object-contain w-full h-full rounded-lg md:mb-3`}
-                  />
-                  <div className="absolute left-0 right-0 h-full bottom-0 bg-gradient-to-t from-black-200  to bg-transparent"></div>
-                </div>
+                <Image
+                  src={urlFor(project.imageTitle).url()}
+                  alt={project.title}
+                  width={300}
+                  height={200}
+                  priority={true}
+                  className={`object-contain w-full h-full rounded-lg md:mb-3`}
+                />
                 <CardTitle className="h2-normal !mb-2 text-white-900">
                   {project.title}
                 </CardTitle>

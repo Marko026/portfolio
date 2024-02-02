@@ -6,9 +6,9 @@ import { AllProjects } from "@/types";
 
 const WorkInProgress = ({ project }: { project: AllProjects }) => {
   return (
-    <div className="md:w-[55%]">
-      <Card className="border-none bg-black-200 p-4 shadow-md hover:shadow-glow duration-300">
-        <div className="bg-white rounded-xl ">
+    <div>
+      <Card className="border-none  p-4 rounded-3xl shadow-md hover:shadow-glow duration-300">
+        <div className="bg-white rounded-3xl ">
           <CardHeader className="!p-0">
             <div className="relative group">
               <Image
@@ -21,7 +21,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
                   project.workInProgress === true && "filter blur-md"
                 }`}
               />
-              <p className="absolute opacity-0 transform rotate-45 group-hover:opacity-100 duration-200  left-[85%] top-1/2 -translate-x-1/2 -translate-y-1/2  text-white-900 text-2xl xl:text-4xl font-semibold">
+              <p className="absolute opacity-0 transform rounded-3xl rotate-45 group-hover:opacity-100 duration-200  left-[85%] top-1/2 -translate-x-1/2 -translate-y-1/2  text-white-900 text-2xl xl:text-4xl font-semibold">
                 Work in Progress
               </p>
             </div>
