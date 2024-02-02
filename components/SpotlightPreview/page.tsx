@@ -4,7 +4,7 @@ import Spotlight from "@/components/ui/Spotlight";
 
 export function SpotlightPreview() {
   return (
-    <div className="mt-[90px]">
+    <div className="mt-10 md:mt-24">
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"

@@ -5,14 +5,14 @@ import React from "react";
 
 const Technologies = async ({ tag }: TechProps) => {
   return (
-    <div>
+    <div className="w-1/6">
       <Image
         src={urlFor(tag.techImage).url()}
         alt={tag.name}
         width={50}
         priority={true}
         height={50}
-        className="object-contain w-full h-full rounded-lg md:mb-3 "
+        className="w-full h-full rounded-lg md:mb-3 "
       />
     </div>
   );

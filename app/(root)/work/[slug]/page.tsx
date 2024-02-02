@@ -81,7 +81,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
                 height={15}
                 priority={true}
                 alt="arrow"
-                className="sm:inline-block ml-2"
+                className="inline-block ml-2"
               />
             </Link>
           </div>

@@ -27,7 +27,7 @@ export const FloatingNav = ({
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     let direction = current - scrollYProgress.getPrevious();
 
-    if (scrollYProgress.get() < 0.05) {
+    if (scrollYProgress.get() < 0.1) {
       setVisible(true);
     } else {
       if (direction < 0) {
@@ -51,20 +51,20 @@ export const FloatingNav = ({
       <motion.div
         initial={{
           opacity: 1,
-          y: -100,
+          y: -150,
         }}
         animate={{
           y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
         transition={{
-          duration: 0.2,
+          duration: 0.4,
         }}
         className={cn(
           "flex max-w-fit fixed top-10 inset-x-0 mx-auto  z-[5000]  items-center justify-center",
           className
         )}>
-        <div className="w-[451px]  flex justify-center py-4 md:py-7 px-2 border  border-gray-700 rounded-full  bg-black-200 bg-opacity-70 gap-10 ">
+        <div className="md:w-[450px]  flex justify-center px-6 py-3 md:py-7  border  border-gray-700 rounded-full  bg-black-100 bg-opacity-20 gap-10 ">
           {navItems.map((page) => (
             <Link
               key={page.path}
