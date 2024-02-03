@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/sanity";
 import { AllProjects } from "@/types";
+import { motion, useInView } from "framer-motion";
 
 const WorkInProgress = ({ project }: { project: AllProjects }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const variants = {
+    hidden: { opacity: 0, y: 100 },
+    show: { opacity: 1, y: 0 },
+  };
   return (
-    <div>
+    <motion.div
+      ref={ref}
+      variants={variants}
+      animate={isInView ? "show" : "hidden"}
+      transition={{ duration: 3 }}
+      className="relative md:w-[55%]">
       <Card className="border-none  p-4 rounded-3xl shadow-md hover:shadow-glow duration-300">
         <div className="bg-white rounded-3xl ">
           <CardHeader className="!p-0">
@@ -25,7 +37,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
                 Work in Progress
               </p>
             </div>
-            <CardTitle className="h2-normal !mb-2 text-white-900">
+            <CardTitle className="h2-normal !mb-2 line-clamp-1 text-white-900">
               {project.title}
             </CardTitle>
           </CardHeader>
@@ -34,7 +46,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
           </CardContent>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 

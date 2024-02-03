@@ -62,7 +62,7 @@ export const FloatingNav = ({
           "flex max-w-fit fixed top-10 inset-x-0 mx-auto  z-[5000]  items-center justify-center",
           className
         )}>
-        <div className="md:w-[450px]  flex justify-center px-6 py-3 md:py-7  border  border-gray-700 rounded-full  bg-black-100 bg-opacity-20 gap-10 ">
+        <div className="md:w-[450px]  flex justify-center px-6 py-3 md:py-7  border  border-gray-700 rounded-full  bg-black-100 bg-opacity-50 gap-10 ">
           {navItems.map((page) => (
             <Link
               key={page.path}
