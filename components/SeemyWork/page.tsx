@@ -12,7 +12,7 @@ const GradientShadowButton = () => {
           <Image src="/icons/Vector.svg" width={10} height={10} alt="arrow" />
         </div>
       </Link>
-      <span className="pointer-events-none absolute -inset-4 z-0 transform-gpu rounded-full bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] opacity-30 blur-lg transition-all duration-300 group-hover:opacity-90 group-active:opacity-50" />
+      <span className="pointer-events-none absolute group-hover:-inset-4 z-0 transform-gpu rounded-full bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] opacity-30 blur-lg transition-all duration-300 group-hover:opacity-90 group-active:opacity-50" />
     </div>
   );
 };
