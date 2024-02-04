@@ -10,6 +10,7 @@ import Link from "next/link";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 export const revalidate = 30;
 
@@ -69,33 +70,21 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         </div>
         <div className="flex flex-col xl:flex-row gap-3 justify-between">
           <div className=" w-full xl:w-1/4 ">
-            <h2 className="h2-normal ">Final Site</h2>
-            <Link
-              href={project.finalSite.link}
-              target="_blank"
-              className="paragraph-regular mb-3 text-white-800">
-              {project.finalSite.link}
-              <Image
-                src="/icons/Vector.svg"
-                width={15}
-                height={15}
-                priority={true}
-                alt="arrow"
-                className="inline-block ml-2"
-              />
-            </Link>
+            <h2 className="h2-normal mb-5">Final Site</h2>
           </div>
-          <div className="xl:w-3/4  bg-black-200 bg-opacity-50 rounded-lg">
-            <div className="flex justify-center">
+          <div className="relative">
+            <PinContainer
+              href={project.finalSite.link || ""}
+              className="xl:w-3/4 bg-black-200 bg-opacity-50 rounded-lg">
               <Image
                 src={urlFor(project.finalSite.siteImage).url()}
                 alt="hero"
                 width={500}
                 height={500}
                 priority={true}
-                className=" w-full my-10 mx-16 max-h-[532px]"
+                className="w-full"
               />
-            </div>
+            </PinContainer>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
