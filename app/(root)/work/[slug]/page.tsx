@@ -43,19 +43,21 @@ const ProjectDetails = async ({ params }: { params: any }) => {
       </div>
       <div className="flex flex-col space-y-7 sm:space-y-14">
         <div className="flex flex-col  sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3 sm:mb-0">Overview</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3 sm:mb-0">Overview</h2>
           <div className="sm:w-3/4 base-regular text-left w-full text-white-800">
             {project.overview}
           </div>
         </div>
         <div className="flex flex-col  sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3">Problem</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3">Problem</h2>
           <div className="sm:w-3/4 base-regular text-left w-full text-white-800">
             {project.problem}
           </div>
         </div>
         <div className="flex flex-col  sm:flex-row justify-between">
-          <h2 className="w-full sm:w-1/4 h2-normal mb-3">Tech Stack</h2>
+          <h2 className="w-full sm:w-1/4 text-left h2-normal mb-3">
+            Tech Stack
+          </h2>
           <div className="sm:w-3/4 base-regular flex justify-start gap-4 flex-wrap text-left w-full text-white-800">
             {project.tags.map((tag: TagProps) => (
               <Technologies key={tag._id} tag={tag} />
@@ -63,19 +65,21 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </div>
         </div>
         <div className="flex flex-col  sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3">Reflection</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3">Reflection</h2>
           <div className="sm:w-3/4 base-regular text-left w-full text-white-800">
             {project.reflection}
           </div>
         </div>
-        <div className="flex flex-col xl:flex-row gap-3 justify-between">
+        <div className="flex flex-col xl:flex-row justify-between">
           <div className=" w-full xl:w-1/4 ">
-            <h2 className="h2-normal mb-5">Final Site</h2>
+            <h2 className="h2-normal text-center xl:text-left mb-2">
+              Final Site
+            </h2>
           </div>
-          <div className="relative">
+          <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">
             <PinContainer
               href={project.finalSite.link || ""}
-              className="xl:w-3/4 bg-black-200 bg-opacity-50 rounded-lg">
+              className=" bg-black-200 bg-opacity-50 rounded-lg w-full ">
               <Image
                 src={urlFor(project.finalSite.siteImage).url()}
                 alt="hero"
@@ -88,7 +92,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3">Learning</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3">Learning</h2>
           <ol className="sm:w-3/4 px-4 sm:px-0 w-full base-regular list-decimal space-y-6 text-white-800">
             {project.learnings.map((learning: string) => (
               <Learnings key={learning} learning={learning} />
@@ -96,7 +100,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </ol>
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3">Challenges</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3">Challenges</h2>
           <ol className="sm:w-3/4 px-4 sm:px-0 w-full base-regular list-decimal space-y-6 text-white-800">
             {project.challenges.map((challenge: string) => (
               <Challenges key={challenge} challenge={challenge} />
@@ -104,7 +108,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </ol>
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
-          <h2 className="w-1/4 h2-normal mb-3">Future</h2>
+          <h2 className="w-1/4 h2-normal text-left mb-3">Future</h2>
           <div className="sm:w-3/4 w-full base-regular text-left text-white-800">
             {project.future}
           </div>
