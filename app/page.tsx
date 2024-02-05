@@ -1,7 +1,6 @@
 import GradientShadowButton from "@/components/SeemyWork/page";
 import { SpotlightPreview } from "@/components/SpotlightPreview/page";
 import Image from "next/image";
-import Link from "next/link";
 
 export default async function Home() {
   return (

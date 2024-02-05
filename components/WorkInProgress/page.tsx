@@ -17,7 +17,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
       ref={ref}
       variants={variants}
       animate={isInView ? "show" : "hidden"}
-      transition={{ duration: 3 }}
+      transition={{ duration: 1 }}
       className="relative md:w-[55%]">
       <Card className="border-none  p-4 rounded-3xl shadow-md hover:shadow-glow duration-300">
         <div className="bg-white rounded-3xl ">
