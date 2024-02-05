@@ -12,7 +12,7 @@ const Technologies = async ({ tag }: TechProps) => {
         width={50}
         priority={true}
         height={50}
-        className="w-full h-full rounded-lg md:mb-3 "
+        className="w-3/4 rounded-lg md:mb-3 "
       />
     </div>
   );
