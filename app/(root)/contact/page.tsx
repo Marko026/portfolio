@@ -17,7 +17,7 @@ const Contact = () => {
             key={link.href}
             href={link.href}
             target="_blank"
-            className="grow basis-2/5 lg:basis-1/5 shadow-md hover:shadow-glow duration-200 hover:scale-105 bg-black-200 bg-opacity-70 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
+            className="grow basis-2/5 lg:basis-1/5 shadow-md hover:shadow-glow duration-500 hover:scale-105 bg-black-200 bg-opacity-70 backdrop-blur-xl flex items-center justify-center rounded-[8px] py-3 px-7 ">
             <Image
               src={link.src}
               width={20}

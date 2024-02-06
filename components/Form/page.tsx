@@ -14,8 +14,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "../ui/textarea";
+import { useState } from "react";
+import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
+  const [isSending, setIsSending] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -26,32 +30,44 @@ const ContactForm = () => {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const respond = await fetch("api/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-    const data = await respond.json();
-    form.reset({});
-    return data;
+    setIsSending(true);
+    try {
+      const respond = await fetch("api/send", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+      const data = await respond.json();
+      if (respond.ok) {
+        toast.success("Message sent successfully!");
+      } else {
+        toast.error("Message not sent, please try again!");
+      }
+      form.reset({});
+      setIsSending(false);
+      return data;
+    } catch (error) {
+      console.error("Error:", error);
+      setIsSending(false);
+    }
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <Toaster />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
         <FormField
           control={form.control}
           name="name"
           render={({ field }) => (
             <FormItem>
+              <FormLabel className="text-lg text-white-800">
+                What’s your name?
+              </FormLabel>
               <FormControl>
-                <Input
-                  className="inputStyle text-md "
-                  placeholder="Name"
-                  {...field}
-                />
+                <Input className="inputStyle text-md !h-28 " {...field} />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
@@ -62,12 +78,11 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
+              <FormLabel className="text-lg text-white-800">
+                What’s your email?
+              </FormLabel>
               <FormControl>
-                <Input
-                  className="inputStyle text-md"
-                  placeholder="Your Email"
-                  {...field}
-                />
+                <Input className="inputStyle text-md !h-28" {...field} />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
@@ -78,20 +93,31 @@ const ContactForm = () => {
           name="text"
           render={({ field }) => (
             <FormItem>
+              <FormLabel className="text-lg text-white-800">
+                Write something about your project goals and timeframe
+              </FormLabel>
               <FormControl>
-                <Textarea
-                  placeholder="Message..."
-                  className="inputStyle text-md"
-                  {...field}
-                />
+                <Textarea className="inputStyle text-md !h-48" {...field} />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
           )}
         />
-        <Button type="submit" className="inputStyle px-12 !h-12">
-          Submit
-        </Button>
+        <div className="overflow-hidden bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] rounded-full">
+          <Button
+            type="submit"
+            className="w-full px-12 !h-12 text-lg transition hover:scale-110 duration-300
+           leading-7 text-white-900 ">
+            {isSending ? "Sending..." : "Send"}
+            <Image
+              src="/icons/Vector.svg"
+              width={10}
+              height={10}
+              alt="arrow"
+              className="inline-block ml-2"
+            />
+          </Button>
+        </div>
       </form>
     </Form>
   );

@@ -50,12 +50,12 @@
     0 0 24px 0 rgba(193, 164, 255, 0.8), 0 0 30px 0 rgba(193, 164, 255, 0.8);
 }
 .hover\:shadow-glow:hover {
-  box-shadow: 0 0 30px 0 rgba(193, 164, 255, 0.8),
+  box-shadow: 0 0 10px 0 rgba(193, 164, 255, 0.8),
     0 0 12px 0 rgba(193, 164, 255, 0.8), 0 0 18px 0 rgba(193, 164, 255, 0.8),
-    0 0 24px 0 rgba(193, 164, 255, 0.8), 0 0 30px 0 rgba(193, 164, 255, 0.8);
+    0 0 24px 0 rgba(193, 164, 255, 0.8), 0 0 10px 0 rgba(193, 164, 255, 0.8);
 }
 .inputStyle {
-  @apply text-white-800 shadow-md hover:shadow-glow duration-300 h-14
-  bg-black-200 bg-opacity-70 backdrop-blur-xl border-transparent
+  @apply text-white-800 hover:shadow-glow duration-500 h-14
+  bg-black-200 bg-opacity-70 backdrop-blur-lg border-transparent
     tracking-wider focus:ring-violet-500 focus:border-violet-500;
 }
