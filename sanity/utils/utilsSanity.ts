@@ -50,7 +50,8 @@ export async function getProject(slug: string) {
       name,
       "techImage": techImage.asset->url
     },
-    workInProgress
+    workInProgress,
+    views
   }`
   const data = await client.fetch(query, {slug})
   return data
@@ -64,5 +65,22 @@ export async function getTechnologies() {
         techImage
       }`
   const data = await client.fetch(query)
+  return data
+}
+
+export async function incrementViewCount(slug: string) {
+  // Fetch the current view count
+  const query = `*[_type=="project" && slug.current==$slug][0] {
+    views
+  }`
+  const data = await client.fetch(query, {slug})
+
+  // Increment the view count
+  const incrementQuery = `
+    *[_type=="project" && slug.current==$slug] {
+      views += 1
+    }
+  `
+  await client.fetch(incrementQuery, {slug})
   return data
 }

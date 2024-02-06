@@ -103,5 +103,10 @@ export default {
       title: 'Work in Progress',
       type: 'boolean',
     },
+    {
+      name: 'views',
+      title: 'Views',
+      type: 'number',
+    },
   ],
 }
