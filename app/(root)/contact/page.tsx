@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { links } from "@/constants";
 import Form from "@/components/Form/page";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Let's get in touch!",
+};
+
 const Contact = () => {
   return (
     <section className="max-w-4xl mx-auto">

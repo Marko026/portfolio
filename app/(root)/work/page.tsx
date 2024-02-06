@@ -1,6 +1,12 @@
 import React from "react";
+import type { Metadata } from "next";
 import { getProjects } from "@/sanity/utils/utilsSanity";
 import ProjectCards from "@/components/PorjectCards/page";
+
+export const metadata: Metadata = {
+  title: "Case Studies",
+  description: "Projects that reflect my passion, skill, and commitment",
+};
 
 export const revalidate = 30;
 

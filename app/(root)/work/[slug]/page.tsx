@@ -6,13 +6,27 @@ import Learnings from "@/components/Learnings/page";
 import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
 import { TagProps } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
+import { Metadata } from "next";
 
 export const revalidate = 30;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const project = await getProject(params.slug);
+  const title = project.title;
+  const description = project.overview;
+  return {
+    title: title,
+    description: description,
+  };
+}
 
 const ProjectDetails = async ({ params }: { params: any }) => {
   const project = await getProject(params.slug);
