@@ -11,6 +11,7 @@ import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const revalidate = 30;
 
@@ -29,10 +30,16 @@ export async function generateMetadata({
 }
 
 const ProjectDetails = async ({ params }: { params: any }) => {
-  const project = await getProject(params.slug);
-  const projects = await getProjects();
+  const [projects, project] = await Promise.all([
+    getProjects(),
+    getProject(params.slug),
+  ]);
 
   const textSplit = project.title.split("-");
+
+  const currentIndex = projects.findIndex(
+    (project: any) => project.slug === params.slug
+  );
 
   return (
     <TracingBeam>
@@ -129,8 +136,12 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         </div>
       </div>
       <div className="flex justify-between  py-10 sm:py-28">
-        <PreviousStudyButton slug={params.slug} projects={projects} />
-        <NextStudyButton slug={params.slug} projects={projects} />
+        {currentIndex > 0 && (
+          <PreviousStudyButton slug={params.slug} projects={projects} />
+        )}
+        {currentIndex < projects.length - 2 && (
+          <NextStudyButton slug={params.slug} projects={projects} />
+        )}
       </div>
     </TracingBeam>
   );
