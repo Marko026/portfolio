@@ -67,20 +67,12 @@ export async function getTechnologies() {
   const data = await client.fetch(query)
   return data
 }
-
 export async function incrementViewCount(slug: string) {
-  // Fetch the current view count
-  const query = `*[_type=="project" && slug.current==$slug][0] {
-    views
-  }`
-  const data = await client.fetch(query, {slug})
-
-  // Increment the view count
-  const incrementQuery = `
-    *[_type=="project" && slug.current==$slug] {
-      views += 1
-    }
-  `
-  await client.fetch(incrementQuery, {slug})
-  return data
+  const currentData = await client.fetch(
+    `*[_type=="project" && slug.current==$slug][0] {
+    views}`,
+    {slug},
+  )
+  let currentViews = currentData?.views + 1
+  return currentViews
 }

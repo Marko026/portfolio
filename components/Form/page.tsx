@@ -106,7 +106,7 @@ const ContactForm = () => {
         <div className="overflow-hidden bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] rounded-full">
           <Button
             type="submit"
-            className="w-full px-12 !h-12 text-lg transition hover:scale-110 duration-300
+            className="w-full px-12 !h-16 text-lg transition hover:scale-110 duration-300
            leading-7 text-white-900 ">
             {isSending ? "Sending..." : "Send"}
             <Image
