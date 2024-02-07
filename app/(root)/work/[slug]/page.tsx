@@ -3,11 +3,16 @@ import Challenges from "@/components/Challenges/page";
 import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
 import Learnings from "@/components/Learnings/page";
-import { getProject, getProjects } from "@/sanity/utils/utilsSanity";
+import {
+  getProject,
+  getProjects,
+  incrementViewCount,
+} from "@/sanity/utils/utilsSanity";
 import { TagProps } from "@/types";
 import Image from "next/image";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
+import ViewCount from "@/components/ViewCount/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
@@ -31,6 +36,8 @@ export async function generateMetadata({
 const ProjectDetails = async ({ params }: { params: any }) => {
   const project = await getProject(params.slug);
   const projects = await getProjects();
+  const views = await incrementViewCount(params.slug);
+  console.log(views);
 
   const textSplit = project.title.split("-");
 
@@ -52,8 +59,9 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           width={500}
           height={500}
           priority={true}
-          className="w-full h-full rounded-lg mt-10 mb-10 sm:mb-20 max-h-[680px]"
+          className="w-full h-full rounded-lg mt-10 max-h-[680px]"
         />
+        <ViewCount />
       </div>
       <div className="flex flex-col space-y-7 sm:space-y-14">
         <div className="flex flex-col  sm:flex-row justify-between">
