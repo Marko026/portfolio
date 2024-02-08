@@ -14,8 +14,8 @@ const CaseStudies = async () => {
   const allCaseStudies = await getProjects();
 
   return (
-    <div>
-      <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
+    <div className="flex max-w-7xl mx-auto flex-col">
+      <div className=" text-center mt-10 md:mt-28">
         <h1 className="h1-semibold text-white-900">
           Passionate About Crafting Functional Online Experiences
         </h1>

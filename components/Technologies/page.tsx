@@ -5,7 +5,7 @@ import React from "react";
 
 const Technologies = async ({ tag }: TechProps) => {
   return (
-    <div className="w-1/6">
+    <div className="w-[13%]">
       <Image
         src={urlFor(tag.techImage).url()}
         alt={tag.name}

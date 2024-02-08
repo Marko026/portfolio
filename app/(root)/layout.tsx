@@ -3,7 +3,7 @@ import React from "react";
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       {children}
       <Footer />
     </div>
