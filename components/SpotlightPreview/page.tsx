@@ -13,7 +13,7 @@ export function SpotlightPreview() {
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
-      <h1 className="h1-semibold mb-4 text-white-900">
+      <h1 className="h1-semibold my-12 mb-4 text-white-900">
         <span className="gradient-text text-white-900">
           <AnimatePresence>
             {sentence1.split("").map((letter, index) => (

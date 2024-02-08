@@ -3,6 +3,7 @@ import Link from "next/link";
 import { links } from "@/constants";
 import Form from "@/components/Form/page";
 import type { Metadata } from "next";
+import { MotionDiv } from "@/components/MotionDiv";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -12,11 +13,15 @@ export const metadata: Metadata = {
 const Contact = () => {
   return (
     <section className="max-w-4xl mx-auto">
-      <div className=" text-center mt-10 md:mt-28">
-        <h1 className="h1-semibold text-white-900 mb-16">
+      <MotionDiv
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.15 }}
+        className=" text-center mt-10 md:mt-28">
+        <h1 className="h1-semibold text-white-900 my-12 md:mb-16">
           Thanks for snapping a look. Let's get in touch!
         </h1>
-      </div>
+      </MotionDiv>
       <Form />
       <div className="flex justify-between gap-3 flex-wrap mx-auto py-20 mb-[200px]">
         {links.map((link) => (

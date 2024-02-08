@@ -15,6 +15,7 @@ const WatermarkWrapper = () => {
     <>
       <Watermark text="Get motivated" />
       <Watermark text="Live inspired" reverse />
+      <Watermark text="Dream Big" reverse />
       <Watermark text="Find your passion" />
     </>
   );
