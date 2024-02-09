@@ -103,8 +103,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">
             <PinContainer
               href={project.finalSite.link || ""}
-              className=" bg-black-200 bg-opacity-50 rounded-lg w-full "
-            >
+              className=" bg-black-200 bg-opacity-50 rounded-lg w-full ">
               <Image
                 src={urlFor(project.finalSite.siteImage).url()}
                 alt="hero"
@@ -140,8 +139,10 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         </div>
       </div>
       <div className="flex justify-between py-10 sm:py-28">
-        {previousProject._id && (
+        {previousProject._id ? (
           <PreviousStudyButton previousProject={previousProject} />
+        ) : (
+          <div className="invisible"></div>
         )}
         {nextProject._id && <NextStudyButton nextProject={nextProject} />}
       </div>

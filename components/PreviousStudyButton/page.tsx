@@ -12,7 +12,7 @@ type Props = {
 const PreviousButton = ({ previousProject }: Props) => {
   return (
     <Link href={`/work/${previousProject.slug}`} className="cursor-pointer">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
+      <div className="flex flex-col sm:flex-row items-start mb-2 sm:items-center gap-2">
         <Image
           src="/icons/arrow-left.svg"
           alt="hero"
@@ -24,8 +24,8 @@ const PreviousButton = ({ previousProject }: Props) => {
           Previous Study
         </p>
       </div>
-      <p className="text-white-800 text-xs  sm:text-sm">
-        {previousProject.title}
+      <p className="text-white-800 capitalize text-left text-xs  sm:text-sm">
+        {previousProject.slug}
       </p>
     </Link>
   );
