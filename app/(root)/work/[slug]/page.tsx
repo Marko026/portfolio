@@ -4,8 +4,8 @@ import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
 import Learnings from "@/components/Learnings/page";
 import {
+  getNextAndPrevious,
   getProject,
-  getProjects,
   incrementViewCount,
 } from "@/sanity/utils/utilsSanity";
 import { TagProps } from "@/types";
@@ -16,8 +16,9 @@ import ViewCount from "@/components/ViewCount/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
+import projects from "@/sanity/schemas/projects";
 
-export const revalidate = 30;
+export const revalidate = 0;
 
 export async function generateMetadata({
   params,
@@ -34,18 +35,13 @@ export async function generateMetadata({
 }
 
 const ProjectDetails = async ({ params }: { params: any }) => {
-  const [projects, project] = await Promise.all([
-    getProjects(),
+  const [_, project, { nextProject, previousProject }] = await Promise.all([
+    incrementViewCount(params.slug),
     getProject(params.slug),
+    getNextAndPrevious(params.slug),
   ]);
-  const views = await incrementViewCount(params.slug);
-  console.log(views);
 
   const textSplit = project.title.split("-");
-
-  const currentIndex = projects.findIndex(
-    (project: any) => project.slug === params.slug
-  );
 
   return (
     <TracingBeam>
@@ -67,7 +63,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           priority={true}
           className="w-full h-full rounded-lg mt-10 max-h-[680px]"
         />
-        <ViewCount />
+        <ViewCount views={project.views} />
       </div>
       <div className="flex flex-col space-y-7 sm:space-y-14">
         <div className="flex flex-col  sm:flex-row justify-between">
@@ -107,7 +103,8 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">
             <PinContainer
               href={project.finalSite.link || ""}
-              className=" bg-black-200 bg-opacity-50 rounded-lg w-full ">
+              className=" bg-black-200 bg-opacity-50 rounded-lg w-full "
+            >
               <Image
                 src={urlFor(project.finalSite.siteImage).url()}
                 alt="hero"
@@ -142,13 +139,11 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </div>
         </div>
       </div>
-      <div className="flex justify-between  py-10 sm:py-28">
-        {currentIndex > 0 && (
-          <PreviousStudyButton slug={params.slug} projects={projects} />
+      <div className="flex justify-between py-10 sm:py-28">
+        {previousProject._id && (
+          <PreviousStudyButton previousProject={previousProject} />
         )}
-        {currentIndex < projects.length - 2 && (
-          <NextStudyButton slug={params.slug} projects={projects} />
-        )}
+        {nextProject._id && <NextStudyButton nextProject={nextProject} />}
       </div>
     </TracingBeam>
   );

@@ -1,34 +1,17 @@
-"use client";
-import { AllProjects } from "@/types";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 
 type Props = {
-  slug: string;
-  projects: AllProjects[];
-};
-const NextStudyButton = ({ slug, projects }: Props) => {
-  const router = useRouter();
-  const currenProject = useRef<AllProjects | null>(null);
-  const nextProject = useRef<AllProjects | null>(null);
-
-  useEffect(() => {
-    const currentIndex = projects.findIndex((project) => project.slug === slug);
-    currenProject.current = projects[currentIndex];
-    nextProject.current = projects[currentIndex + 1];
-  }, [slug, projects]);
-
-  const handleNext = () => {
-    if (nextProject.current?.workInProgress) return;
-
-    if (nextProject.current) {
-      router.push(`/work/${nextProject.current.slug}`);
-    }
+  nextProject: {
+    _id: string;
+    title: string;
+    slug: string;
   };
+};
 
+const NextStudyButton = ({ nextProject }: Props) => {
   return (
-    <div onClick={handleNext} className="cursor-pointer">
+    <Link href={`/work/${nextProject.slug}`} className="cursor-pointer">
       <div className="flex flex-col-reverse sm:flex-row items-end  sm:items-center gap-2">
         <p className="text-sm sm:text-2xl font-bold text-white-900">
           Next Study
@@ -41,10 +24,8 @@ const NextStudyButton = ({ slug, projects }: Props) => {
           priority={true}
         />
       </div>
-      <p className="text-white-800 text-xs sm:text-sm">
-        Filmpire - AI Movie App
-      </p>
-    </div>
+      <p className="text-white-800 text-xs sm:text-sm">{nextProject.title}</p>
+    </Link>
   );
 };
 

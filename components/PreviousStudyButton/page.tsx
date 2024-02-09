@@ -1,32 +1,17 @@
-"use client";
-import { AllProjects } from "@/types";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 
 type Props = {
-  slug: string;
-  projects: AllProjects[];
+  previousProject: {
+    _id: string;
+    title: string;
+    slug: string;
+  };
 };
 
-const PreviousButton = ({ slug, projects }: Props) => {
-  const router = useRouter();
-  const currentProject = useRef<AllProjects | null>(null);
-  const previousProject = useRef<AllProjects | null>(null);
-  useEffect(() => {
-    const currentIndex = projects.findIndex((project) => project.slug === slug);
-    currentProject.current = projects[currentIndex];
-    previousProject.current = projects[currentIndex - 1];
-  }, [slug, projects]);
-  const handlePrevious = () => {
-    if (previousProject.current?.workInProgress) return;
-    if (previousProject.current) {
-      router.push(`/work/${previousProject.current.slug}`);
-    }
-  };
-
+const PreviousButton = ({ previousProject }: Props) => {
   return (
-    <div onClick={handlePrevious} className="cursor-pointer">
+    <Link href={`/work/${previousProject.slug}`} className="cursor-pointer">
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
         <Image
           src="/icons/arrow-left.svg"
@@ -40,9 +25,9 @@ const PreviousButton = ({ slug, projects }: Props) => {
         </p>
       </div>
       <p className="text-white-800 text-xs  sm:text-sm">
-        JobIT - Job Finding App
+        {previousProject.title}
       </p>
-    </div>
+    </Link>
   );
 };
 

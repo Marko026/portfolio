@@ -34,3 +34,40 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+# 
+
+### Code Review
+
+- Always separte external imports from internal imports for better readability.
+    For example:
+    ```tsx
+    // External imports
+    import React from 'react';
+    import Image from 'next/image';
+
+    // Internal imports
+    import { Header } from '../components/Header';
+    import { Footer } from '../components/Footer';
+    ```
+
+    We can do this in two ways:
+    1. Manually separate the imports when you are writing the code.
+    2. Use the [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
+
+- Understand when to break code into components. I follow a simple rule:
+    - Reusability
+        If a component is used more than once, it should be a separate component.
+    - Readability
+        If a your main component is getting too big, break it into smaller components depending on the functionality
+    - SOC
+        Separation of Concerns. Specially in Next.js, we have two types of components: `client` and `server`. Depending on this state, we should separate the components.
+
+- Remove background shadow for button elements. Instead use some other variants on hover like
+    - Top Graident
+    - Border Magic
+    - Tailwind Connect
+    - Shimmer
+    from [Aceternity UI](https://ui.aceternity.com/components/tailwindcss-buttons) components
+
+- 

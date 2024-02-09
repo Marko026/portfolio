@@ -1,4 +1,5 @@
-import {client} from '../lib/sanity'
+import {groq} from 'next-sanity'
+import {client, writeClient} from '../lib/sanity'
 
 export async function getProjects() {
   const query = `*[_type=="project"] | order(_createdAt asc) {
@@ -53,7 +54,9 @@ export async function getProject(slug: string) {
     workInProgress,
     views
   }`
+
   const data = await client.fetch(query, {slug})
+
   return data
 }
 
@@ -67,12 +70,40 @@ export async function getTechnologies() {
   const data = await client.fetch(query)
   return data
 }
+
+// export async function incrementViewCount(slug: string) {
+//   const currentData = await client.fetch(
+//     `*[_type=="project" && slug.current==$slug][0] {
+//     views}`,
+//     {slug},
+//   )
+//   let currentViews = currentData?.views + 1
+//   return currentViews
+// }
+
 export async function incrementViewCount(slug: string) {
-  const currentData = await client.fetch(
-    `*[_type=="project" && slug.current==$slug][0] {
-    views}`,
-    {slug},
-  )
-  let currentViews = currentData?.views + 1
-  return currentViews
+  await writeClient
+    .patch({
+      query: `*[_type == "project" && slug.current == $slug][0]`,
+      params: {slug},
+    })
+    .inc({views: 1})
+    .commit()
+}
+
+export async function getNextAndPrevious(slug: string) {
+  const query = `*[_type=="project" && workInProgress == false] | order(_createdAt asc) {
+    _id,
+    title,
+    "slug":slug.current
+  }`
+
+  const data = await client.fetch(query)
+
+  const currentIndex = data.findIndex((project: any) => project.slug === slug)
+
+  const next = currentIndex + 1 >= data.length ? {} : data[currentIndex + 1]
+  const previous = currentIndex - 1 < 0 ? {} : data[currentIndex - 1]
+
+  return {nextProject: next, previousProject: previous}
 }

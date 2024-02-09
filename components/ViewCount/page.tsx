@@ -1,7 +1,9 @@
 import React from "react";
 
-const ViewCount = () => {
-  return <div className="text-right text-white-800 my-10">Views:{1000}</div>;
+const ViewCount = ({views}: {
+  views: number 
+}) => {
+  return <div className="text-right text-white-800 my-10">Views:{views}</div>;
 };
 
 export default ViewCount;

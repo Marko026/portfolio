@@ -107,6 +107,7 @@ export default {
       name: 'views',
       title: 'Views',
       type: 'number',
+      initialValue: 0,
     },
   ],
 }
