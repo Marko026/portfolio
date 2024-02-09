@@ -1,4 +1,3 @@
-import {groq} from 'next-sanity'
 import {client, writeClient} from '../lib/sanity'
 
 export async function getProjects() {
@@ -70,16 +69,6 @@ export async function getTechnologies() {
   const data = await client.fetch(query)
   return data
 }
-
-// export async function incrementViewCount(slug: string) {
-//   const currentData = await client.fetch(
-//     `*[_type=="project" && slug.current==$slug][0] {
-//     views}`,
-//     {slug},
-//   )
-//   let currentViews = currentData?.views + 1
-//   return currentViews
-// }
 
 export async function incrementViewCount(slug: string) {
   await writeClient

@@ -59,17 +59,17 @@ export const FloatingNav = ({
           duration: 0.4,
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto  z-[5000]  items-center justify-center",
+          " max-w-fit fixed top-10 inset-x-0 mx-auto  z-[5000] ",
           className
         )}>
-        <div className="md:w-[450px]  flex justify-center px-6 py-3 md:py-7  border  border-gray-700 rounded-full  bg-black-100 bg-opacity-50 gap-10 ">
+        <div className=" flex justify-center px-6 py-2 md:px-8 md:py-3.5 border  border-gray-700 rounded-2xl   bg-black-100 bg-opacity-50 gap-5 md:gap-10 ">
           {navItems.map((page) => (
             <Link
               key={page.path}
               href={page.path}
               className={`relative max-w-[268px]`}>
               <p
-                className={` paragraph-regular hover:text-white-900 ${
+                className={`small-regular hover:text-white-900 ${
                   path === page.path ? "text-white-900" : "text-white-800"
                 }`}>
                 {page.name}
@@ -77,13 +77,13 @@ export const FloatingNav = ({
 
               <Image
                 src="/images/indicator.svg"
-                width={8}
-                height={8}
+                width={6}
+                height={6}
                 alt="indicator"
                 priority={true}
                 className={`absolute
          ${path === page.path ? "block" : "hidden"}
-         md:bottom-[-17px] right-[50%] animate-pulse transform -translate-x-50% rounded-full`}
+         md:bottom-[-8px] right-[50%] animate-pulse transform -translate-x-50% rounded-full`}
               />
             </Link>
           ))}
