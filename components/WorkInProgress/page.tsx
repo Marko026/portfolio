@@ -37,11 +37,11 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
                 Work in Progress
               </p>
             </div>
-            <CardTitle className="h2-normal pl-1 line-clamp-1 text-white-900">
+            <CardTitle className="h2-normal pl-2 line-clamp-1 text-white-900">
               {project.title}
             </CardTitle>
           </CardHeader>
-          <CardContent className="!pl-1 ">
+          <CardContent className="!pl-2 ">
             <p className="base-regular text-white-800 ">{project.subtitle}</p>
           </CardContent>
         </div>

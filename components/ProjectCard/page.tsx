@@ -31,14 +31,13 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
         <Link
           href={`/work/${project.slug}`}
           key={project._id}
-          className="relative md:w-[55%] group overflow-hidden">
-          <Card className="border-none rounded-3xl p-3">
+          className="relative md:w-[55%] rounded-2xl overflow-hidden">
+          <Card className="border-none">
             <motion.div
               variants={variants}
               animate={hasAnimated ? "show" : "hidden"}
               transition={{ duration: 1 }}
-              ref={ref}
-              className="rounded-xl ">
+              ref={ref}>
               <CardHeader className="!p-0">
                 <Image
                   src={urlFor(project.imageTitle).url()}
@@ -46,13 +45,13 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
                   width={300}
                   height={200}
                   priority={true}
-                  className={`object-contain w-full h-full rounded-lg md:mb-3 duration-500 group-hover:scale-105`}
+                  className={`object-contain w-full h-full rounded-lg md:mb-3 duration-300 hover:scale-105`}
                 />
-                <CardTitle className="h2-normal pl-1 line-clamp-1 text-white-900">
+                <CardTitle className="h2-normal pl-2 line-clamp-1 text-white-900">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="!p-1">
+              <CardContent className="!pl-2">
                 <p className="base-regular text-white-800">
                   {project.subtitle}
                 </p>
