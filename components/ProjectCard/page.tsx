@@ -31,8 +31,8 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
         <Link
           href={`/work/${project.slug}`}
           key={project._id}
-          className="relative md:w-[55%]">
-          <Card className="border-none rounded-3xl  p-3 shadow-md hover:shadow-glow duration-500">
+          className="relative md:w-[55%] group overflow-hidden">
+          <Card className="border-none rounded-3xl p-3">
             <motion.div
               variants={variants}
               animate={hasAnimated ? "show" : "hidden"}
@@ -46,13 +46,13 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
                   width={300}
                   height={200}
                   priority={true}
-                  className={`object-contain w-full h-full rounded-lg md:mb-3`}
+                  className={`object-contain w-full h-full rounded-lg md:mb-3 duration-500 group-hover:scale-105`}
                 />
-                <CardTitle className="h2-normal line-clamp-1 !mb-2 text-white-900">
+                <CardTitle className="h2-normal pl-1 line-clamp-1 text-white-900">
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="!p-0 ">
+              <CardContent className="!p-1">
                 <p className="base-regular text-white-800">
                   {project.subtitle}
                 </p>

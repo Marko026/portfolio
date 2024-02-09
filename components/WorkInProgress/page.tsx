@@ -19,7 +19,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
       animate={isInView ? "show" : "hidden"}
       transition={{ duration: 1 }}
       className="relative md:w-[55%]">
-      <Card className="border-none  p-4 rounded-3xl shadow-md hover:shadow-glow duration-300">
+      <Card className="border-none  p-4 rounded-3xl group  overflow-hidden">
         <div className="bg-white rounded-3xl ">
           <CardHeader className="!p-0">
             <div className="relative group">
@@ -29,7 +29,7 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
                 width={300}
                 height={200}
                 priority={true}
-                className={`object-fill w-full h-full rounded-lg md:mb-3 ${
+                className={`object-fill w-full h-full duration-500 group-hover:scale-105 rounded-lg md:mb-3 ${
                   project.workInProgress === true && "filter blur-md"
                 }`}
               />
@@ -37,11 +37,11 @@ const WorkInProgress = ({ project }: { project: AllProjects }) => {
                 Work in Progress
               </p>
             </div>
-            <CardTitle className="h2-normal !mb-2 line-clamp-1 text-white-900">
+            <CardTitle className="h2-normal pl-1 line-clamp-1 text-white-900">
               {project.title}
             </CardTitle>
           </CardHeader>
-          <CardContent className="!p-0 ">
+          <CardContent className="!pl-1 ">
             <p className="base-regular text-white-800 ">{project.subtitle}</p>
           </CardContent>
         </div>
