@@ -36,8 +36,8 @@ const Testimonials = () => {
   return (
     <section
       style={{ pointerEvents: dragging ? "none" : undefined }}
-      className="overflow-hidden bg-transparent px-8  lg:py-24 text-white-900">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 lg:grid-cols-2 md:gap-8">
+      className="overflow-hidden bg-transparent px-8 lg:py-24 text-white-900">
+      <div className="mx-auto grid max-w-6xl pb-20 grid-cols-1 items-center gap-16 lg:grid-cols-2 md:gap-8">
         <div>
           <h1 className="h2-semibold text-center lg:text-left font-black leading-[1.25] md:text-7xl">
             Testimonials
@@ -151,7 +151,7 @@ const Card = ({
       transition={{
         duration: 0.35,
       }}
-      className={`absolute left-0 top-0 grid h-[450px] w-[350px] select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md ${
+      className={`absolute left-5 top-0 grid h-[450px] w-[250px] sm:w-[350px] select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md ${
         draggable ? "cursor-grab active:cursor-grabbing" : ""
       }`}>
       <img

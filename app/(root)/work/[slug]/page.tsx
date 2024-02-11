@@ -1,8 +1,6 @@
 import React from "react";
-import Challenges from "@/components/Challenges/page";
 import Technologies from "@/components/Technologies/page";
 import { urlFor } from "@/sanity/lib/sanity";
-import Learnings from "@/components/Learnings/page";
 import {
   getNextAndPrevious,
   getProject,
@@ -16,7 +14,6 @@ import ViewCount from "@/components/ViewCount/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
-import projects from "@/sanity/schemas/projects";
 
 export const revalidate = 0;
 
@@ -63,7 +60,9 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           priority={true}
           className="w-full h-full rounded-lg mt-10 max-h-[680px]"
         />
-        <ViewCount views={project.views} />
+        <div className="text-right text-white-800 my-10">
+          Views:{project.views}
+        </div>
       </div>
       <div className="flex flex-col space-y-7 sm:space-y-14">
         <div className="flex flex-col  sm:flex-row justify-between">
@@ -118,16 +117,20 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         <div className="flex flex-col sm:flex-row justify-between">
           <h2 className="w-1/4 h2-normal text-left mb-3">Learning</h2>
           <ol className="sm:w-3/4 px-4 sm:px-0 w-full base-regular list-decimal space-y-6 text-white-800">
-            {project.learnings.map((learning: string) => (
-              <Learnings key={learning} learning={learning} />
+            {project.learnings.map((learning: string, idx: any) => (
+              <li key={idx} className="text-left text-white-800">
+                {learning}
+              </li>
             ))}
           </ol>
         </div>
         <div className="flex flex-col sm:flex-row justify-between">
           <h2 className="w-1/4 h2-normal text-left mb-3">Challenges</h2>
           <ol className="sm:w-3/4 px-4 sm:px-0 w-full base-regular list-decimal space-y-6 text-white-800">
-            {project.challenges.map((challenge: string) => (
-              <Challenges key={challenge} challenge={challenge} />
+            {project.challenges.map((challenge: string, idx: any) => (
+              <li key={idx} className="text-left text-white-800">
+                {challenge}
+              </li>
             ))}
           </ol>
         </div>
