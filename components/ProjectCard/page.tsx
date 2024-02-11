@@ -45,9 +45,9 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
                   width={300}
                   height={200}
                   priority={true}
-                  className={`object-contain w-full h-full rounded-lg md:mb-3 duration-300 hover:scale-105`}
+                  className={`object-contain w-full h-full rounded-lg mb-2 duration-300 hover:scale-105`}
                 />
-                <CardTitle className="h2-normal pl-2 line-clamp-1 text-white-900">
+                <CardTitle className="h2-normal pl-2 !mb-2 line-clamp-1 text-white-900">
                   {project.title}
                 </CardTitle>
               </CardHeader>

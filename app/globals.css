@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .h1-semibold {
-  @apply text-[32px] md:text-[64px] font-extrabold leading-[40px] md:leading-[70px] tracking-[-2%];
+  @apply text-[32px] md:text-[52px] lg:text-[64px] font-extrabold leading-[40px] md:leading-[60px] lg:leading-[70px] tracking-[-2%];
 }
 
 .h2-normal {

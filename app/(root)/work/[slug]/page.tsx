@@ -10,7 +10,6 @@ import { TagProps } from "@/types";
 import Image from "next/image";
 import NextStudyButton from "@/components/NextStudyButton/page";
 import PreviousStudyButton from "@/components/PreviousStudyButton/page";
-import ViewCount from "@/components/ViewCount/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";

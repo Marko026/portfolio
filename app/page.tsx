@@ -1,8 +1,8 @@
-import GradientShadowButton from "@/components/SeemyWork/page";
 import { SpotlightPreview } from "@/components/SpotlightPreview/page";
 import { ImageTrailHero } from "@/components/MotivationText/page";
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials/page";
+import LinkMyWork from "@/components/SeemyWork/page";
 
 export default async function Home() {
   return (
@@ -13,7 +13,7 @@ export default async function Home() {
 
       <div className="max-w-4xl mx-auto text-center m-0 z-10">
         <SpotlightPreview />
-        <GradientShadowButton />
+        <LinkMyWork />
         <Image
           src="/images/dev.png"
           width={850}
