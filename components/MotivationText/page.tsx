@@ -14,9 +14,9 @@ const WatermarkWrapper = () => {
   return (
     <>
       <Watermark text="Get motivated" />
+      <Watermark text="Find your passion" />
       <Watermark text="Live inspired" reverse />
       <Watermark text="Dream Big" reverse />
-      <Watermark text="Find your passion" />
     </>
   );
 };
@@ -27,9 +27,7 @@ const Watermark = ({ reverse, text }: { reverse?: boolean; text: string }) => (
       <span className="w-fit  text-[5vmax] font-black uppercase leading-[0.75] text-slate-600 text-opacity-35">
         {text}
       </span>
-    </TranslateWrapper>
-    <TranslateWrapper reverse={reverse || false}>
-      <span className="w-fit text-[5vmax] font-black uppercase leading-[0.75] text-slate-600 text-opacity-25">
+      <span className="w-fit  text-[5vmax] font-black uppercase leading-[0.75] text-slate-600 text-opacity-35">
         {text}
       </span>
     </TranslateWrapper>

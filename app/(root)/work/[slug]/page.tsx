@@ -13,7 +13,7 @@ import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
-
+import { MotionDiv } from "@/components/MotionDiv";
 export const revalidate = 0;
 
 export async function generateMetadata({
@@ -66,9 +66,9 @@ const ProjectDetails = async ({ params }: { params: any }) => {
       <div className="flex flex-col space-y-7 sm:space-y-14">
         <div className="flex flex-col  sm:flex-row justify-between">
           <h2 className="w-1/4 h2-normal text-left mb-3 sm:mb-0">Overview</h2>
-          <div className="sm:w-3/4 base-regular text-left w-full text-white-800">
+          <MotionDiv className="sm:w-3/4 base-regular text-left w-full text-white-800">
             {project.overview}
-          </div>
+          </MotionDiv>
         </div>
         <div className="flex flex-col  sm:flex-row justify-between">
           <h2 className="w-1/4 h2-normal text-left mb-3">Problem</h2>
