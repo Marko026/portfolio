@@ -39,7 +39,7 @@ const Testimonials = () => {
       className="overflow-hidden bg-transparent px-8 lg:py-24 text-white-900">
       <div className="mx-auto grid max-w-6xl pb-20 grid-cols-1 items-center gap-16 lg:grid-cols-2 md:gap-8">
         <div>
-          <h1 className="h2-semibold text-center lg:text-left font-black leading-[1.25] md:text-7xl">
+          <h1 className="h2-semibold text-center lg:text-left font-black leading-[1.25] md:text-[58px]">
             Testimonials
           </h1>
           <p className="mb-8 mt-4 text-lg text-center lg:text-left text-white-800">
