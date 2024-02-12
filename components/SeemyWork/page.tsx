@@ -6,7 +6,7 @@ const LinkMyWork = () => {
     <div className="group sm:mt-9 mx-auto relative w-fit transition-transform duration-300 active:scale-95">
       <Link
         href="/work"
-        className=" px-2 md:px-4  rounded-2xl flex items-center gap-2 relative z-0 overflow-hidden border-gray-700 border 
+        className=" px-2 rounded-2xl flex items-center gap-2 relative z-0 overflow-hidden border-gray-700 border 
         bg-transparent  font-semibold
         uppercase text-violet-300 transition-all duration-500
         before:absolute before:inset-0

@@ -23,7 +23,7 @@ const Contact = () => {
         </h1>
       </MotionDiv>
       <Form />
-      <div className="flex justify-between shimmer gap-3 overflow-hidden flex-wrap mx-auto px-1 py-20 mb-[200px]">
+      <div className="flex justify-between shimmer gap-3 overflow-hidden flex-wrap mx-auto px-1 py-10 md:py-20 mb-[200px]">
         {links.map((link) => (
           <Link
             key={link.href}

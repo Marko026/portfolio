@@ -67,7 +67,7 @@ const ContactForm = () => {
                 What’s your name?
               </FormLabel>
               <FormControl>
-                <Input className="inputStyle text-md !h-28 " {...field} />
+                <Input className="inputStyle text-md md:!h-28 " {...field} />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
@@ -82,7 +82,7 @@ const ContactForm = () => {
                 What’s your email?
               </FormLabel>
               <FormControl>
-                <Input className="inputStyle text-md !h-28" {...field} />
+                <Input className="inputStyle text-md md:!h-28" {...field} />
               </FormControl>
               <FormMessage className="text-red-500 text-md tracking-wide" />
             </FormItem>
