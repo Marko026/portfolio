@@ -1,19 +1,23 @@
 import React from "react";
+import Image from "next/image";
+
+import NextStudyButton from "@/components/NextStudyButton/page";
 import Technologies from "@/components/Technologies/page";
+import PreviousStudyButton from "@/components/PreviousStudyButton/page";
+
 import { urlFor } from "@/sanity/lib/sanity";
+
 import {
   getNextAndPrevious,
   getProject,
   incrementViewCount,
 } from "@/sanity/utils/utilsSanity";
 import { TagProps } from "@/types";
-import Image from "next/image";
-import NextStudyButton from "@/components/NextStudyButton/page";
-import PreviousStudyButton from "@/components/PreviousStudyButton/page";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { PinContainer } from "@/components/ui/3d-pin";
 import { Metadata } from "next";
 import { MotionDiv } from "@/components/MotionDiv";
+
 export const revalidate = 0;
 
 export async function generateMetadata({

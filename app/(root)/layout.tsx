@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer/page";
 import React from "react";
+import Footer from "@/components/Footer/page";
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
   return (

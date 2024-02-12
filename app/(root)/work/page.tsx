@@ -1,7 +1,8 @@
 import React from "react";
+import ProjectCards from "@/components/ProjectCards/page";
+
 import type { Metadata } from "next";
 import { getProjects } from "@/sanity/utils/utilsSanity";
-import ProjectCards from "@/components/ProjectCards/page";
 import { MotionDiv } from "@/components/MotionDiv";
 
 export const metadata: Metadata = {
