@@ -5,6 +5,8 @@ import Testimonials from "@/components/Testimonials/page";
 import LinkMyWork from "@/components/SeemyWork/page";
 
 export default async function Home() {
+  console.log("only commit");
+
   return (
     <div className="mt-10 md:mt-32 relative ">
       <div className="absolute top-40 sm:top-1/4 -z-20">
