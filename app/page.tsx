@@ -3,7 +3,6 @@ import { ImageTrailHero } from "@/components/MotivationText/page";
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials/page";
 import LinkMyWork from "@/components/SeemyWork/page";
-// import AboutMe from "@/components/AboutMe/page";
 
 export default async function Home() {
   return (
@@ -24,7 +23,6 @@ export default async function Home() {
           alt="dev"
         />
       </div>
-      {/* <AboutMe /> */}
       <Testimonials />
     </div>
   );
