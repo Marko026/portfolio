@@ -1,7 +1,7 @@
 import {client, writeClient} from '../lib/sanity'
 
 export async function getProjects() {
-  const query = `*[_type=="project"] | order(_createdAt asc) {
+  const query = `*[_type=="project"] | order(_createdAt desc) {
       _id,
       title,
       subtitle,
