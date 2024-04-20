@@ -112,7 +112,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
                 width={500}
                 height={500}
                 priority={true}
-                className="w-full"
+                className="w-full max-h-[300px] sm:max-h-[400px] md:max-h-[450px]"
               />
             </PinContainer>
           </div>
