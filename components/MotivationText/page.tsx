@@ -50,21 +50,3 @@ const TranslateWrapper = ({
     </motion.div>
   );
 };
-
-const MouseImageTrail = ({ children }: { children: React.ReactNode }) => {
-  const calculateDistance = (
-    x1: number,
-    y1: number,
-    x2: number,
-    y2: number
-  ) => {
-    const deltaX = x2 - x1;
-    const deltaY = y2 - y1;
-
-    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-
-    return distance;
-  };
-
-  return <div className=" overflow-hidden">{children}</div>;
-};

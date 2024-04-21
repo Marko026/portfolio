@@ -37,11 +37,11 @@ export default async function Home() {
           transition={{ duration: 1.15 }}
           className=" text-center mt-12 md:mt-16">
           <h1 className="h1-semibold text-white-900">
-            Passionate About Crafting Functional Online Experiences
+            My projects that speak for themselves
           </h1>
-          <p className="paragraph-regular text-white-800 mt-3 md:mt-6">
-            Dive into a spectrum of projects that reflect my passion, skill, and
-            commitment
+          <p className="paragraph-regular max-w-2xl mx-auto text-white-800 mt-3 md:mt-6">
+            I have worked on a variety of projects, from web development to
+            design. Here are some of my most recent projects.
           </p>
         </MotionDiv>
         <ProjectCards allCaseStudies={allCaseStudies} />

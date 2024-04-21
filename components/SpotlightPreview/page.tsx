@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export function SpotlightPreview() {
   const [animationComplete, setAnimationComplete] = React.useState(false);
   const sentence1 = "Hi! I'am Marko";
-  const sentence2 = ",a Next.js Developer base in Austria";
+  const sentence2 = ", a Next.js Developer based in Austria";
   return (
     <div className="mt-10 md:mt-24">
       <Spotlight
@@ -52,8 +52,7 @@ export function SpotlightPreview() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 3 }}>
-        Web developer creating top-notch digital experiences with passion and
-        precision
+        Passionate about developing performant digital experiences
       </motion.p>
     </div>
   );

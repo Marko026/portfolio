@@ -46,7 +46,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
   return (
     <TracingBeam>
       <div>
-        <div className=" max-w-4xl mx-auto text-center mt-10 md:mt-28">
+        <div className=" max-w-5xl mx-auto text-center mt-10 md:mt-28">
           <h1 className="h1-semibold mb-3">
             <span className="bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] bg-clip-text text-transparent">
               {textSplit[0]}
