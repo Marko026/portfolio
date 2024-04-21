@@ -3,13 +3,17 @@ import { ImageTrailHero } from "@/components/MotivationText/page";
 import Image from "next/image";
 import Testimonials from "@/components/Testimonials/page";
 import LinkMyWork from "@/components/SeemyWork/page";
+import { MotionDiv } from "@/components/MotionDiv";
+import { getProjects } from "@/sanity/utils/utilsSanity";
+import ProjectCards from "@/components/ProjectCards/page";
+import Contact from "@/components/Contact/Contact";
 
 export default async function Home() {
-  console.log("only commit");
+  const allCaseStudies = await getProjects();
 
   return (
     <div className="mt-10 md:mt-32 relative ">
-      <div className="absolute top-40 sm:top-1/4 -z-20">
+      <div className="absolute  sm:top-80 -z-20">
         <ImageTrailHero />
       </div>
 
@@ -26,6 +30,23 @@ export default async function Home() {
         />
       </div>
       <Testimonials />
+      <section id="work" className="flex max-w-7xl mx-auto flex-col">
+        <MotionDiv
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.15 }}
+          className=" text-center mt-12 md:mt-16">
+          <h1 className="h1-semibold text-white-900">
+            Passionate About Crafting Functional Online Experiences
+          </h1>
+          <p className="paragraph-regular text-white-800 mt-3 md:mt-6">
+            Dive into a spectrum of projects that reflect my passion, skill, and
+            commitment
+          </p>
+        </MotionDiv>
+        <ProjectCards allCaseStudies={allCaseStudies} />
+        <Contact />
+      </section>
     </div>
   );
 }

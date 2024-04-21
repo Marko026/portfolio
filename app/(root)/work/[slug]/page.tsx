@@ -37,8 +37,8 @@ export async function generateMetadata({
 const ProjectDetails = async ({ params }: { params: any }) => {
   const [_, project, { nextProject, previousProject }] = await Promise.all([
     incrementViewCount(params.slug),
-    getProject(params.slug),
-    getNextAndPrevious(params.slug),
+    getProject(params?.slug),
+    getNextAndPrevious(params?.slug),
   ]);
 
   const textSplit = project.title.split("-");

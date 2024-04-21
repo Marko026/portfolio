@@ -1,15 +1,15 @@
 export const pages = [
   {
     name: "Home",
-    path: "/",
+    path: "/#",
   },
   {
     name: "Work",
-    path: "/work",
+    path: "/#work",
   },
   {
     name: "Contact",
-    path: "/contact",
+    path: "/#contact",
   },
 ];
 

@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className="font-figTree relative bg-[#03031C] ">
         <main className="pt-16  min-h-screen px-5 bg-[url('/squer.svg')]">
           <Navbar />

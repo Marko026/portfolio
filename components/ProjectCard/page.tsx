@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import Image from "next/image";
 import { AllProjects } from "@/types";
 import { urlFor } from "@/sanity/lib/sanity";
-import WorkInProgress from "../WorkInProgress/page";
 import { motion, useInView } from "framer-motion";
 
 const ProjectCard = ({ project }: { project: AllProjects }) => {
@@ -25,42 +24,36 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
   };
   return (
     <>
-      {project.workInProgress === true ? (
-        <WorkInProgress project={project} />
-      ) : (
-        <Link
-          href={`/work/${project.slug}`}
-          key={project._id}
-          className="relative md:w-[55%] rounded-2xl overflow-hidden">
-          <Card className="border-none">
-            <motion.div
-              variants={variants}
-              animate={hasAnimated ? "show" : "hidden"}
-              transition={{ duration: 1 }}
-              ref={ref}>
-              <CardHeader className="!p-0">
-                <Image
-                  src={urlFor(project.imageTitle).url()}
-                  alt={project.title}
-                  width={300}
-                  height={200}
-                  priority={true}
-                  className={`object-cover w-full h-96 rounded-lg mb-5 duration-300 hover:scale-105`}
-                />
+      <Link
+        href={`/work/${project.slug}`}
+        key={project._id}
+        className="relative md:w-[55%] rounded-2xl overflow-hidden">
+        <Card className="border-none">
+          <motion.div
+            variants={variants}
+            animate={hasAnimated ? "show" : "hidden"}
+            transition={{ duration: 1 }}
+            ref={ref}>
+            <CardHeader className="!p-0">
+              <Image
+                src={urlFor(project.imageTitle).url()}
+                alt={project.title}
+                width={300}
+                height={200}
+                priority={true}
+                className={`object-cover w-full h-96 rounded-lg mb-5 duration-300 hover:scale-105`}
+              />
 
-                <CardTitle className="h2-normal pl-2 !mb-2 line-clamp-1 text-white-900">
-                  {project.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="!pl-2">
-                <p className="base-regular text-white-800">
-                  {project.subtitle}
-                </p>
-              </CardContent>
-            </motion.div>
-          </Card>
-        </Link>
-      )}
+              <CardTitle className="h2-normal pl-2 !mb-2 line-clamp-1 text-white-900">
+                {project.title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="!pl-2">
+              <p className="base-regular text-white-800">{project.subtitle}</p>
+            </CardContent>
+          </motion.div>
+        </Card>
+      </Link>
     </>
   );
 };

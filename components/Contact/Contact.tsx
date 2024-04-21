@@ -1,18 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { links } from "@/constants";
 import Form from "@/components/Form/page";
-import type { Metadata } from "next";
 import { MotionDiv } from "@/components/MotionDiv";
-
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Let's get in touch!",
-};
+import { links } from "@/constants";
 
 const Contact = () => {
   return (
-    <section className="max-w-4xl mx-auto">
+    <section id="contact" className="max-w-5xl mx-auto">
       <MotionDiv
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
