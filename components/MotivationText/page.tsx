@@ -13,10 +13,10 @@ export const ImageTrailHero = () => {
 const WatermarkWrapper = () => {
   return (
     <>
-      <Watermark text="Get motivated" />
-      <Watermark text="Find your passion" />
-      <Watermark text="Live inspired" reverse />
-      <Watermark text="Dream Big" reverse />
+      <Watermark text="FullStack" />
+      <Watermark text="NextJS React" />
+      <Watermark text="MongoDb Prisma" reverse />
+      <Watermark text="JavaScript FramerMotion" reverse />
     </>
   );
 };
