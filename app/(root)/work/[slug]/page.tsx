@@ -1,22 +1,22 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 
-import NextStudyButton from "@/components/NextStudyButton/page";
-import Technologies from "@/components/Technologies/page";
-import PreviousStudyButton from "@/components/PreviousStudyButton/page";
+import NextStudyButton from '@/components/NextStudyButton/page';
+import Technologies from '@/components/Technologies/page';
+import PreviousStudyButton from '@/components/PreviousStudyButton/page';
 
-import { urlFor } from "@/sanity/lib/sanity";
+import { urlFor } from '@/sanity/lib/sanity';
 
 import {
   getNextAndPrevious,
   getProject,
   incrementViewCount,
-} from "@/sanity/utils/utilsSanity";
-import { TagProps } from "@/types";
-import { TracingBeam } from "@/components/ui/tracing-beam";
-import { PinContainer } from "@/components/ui/3d-pin";
-import { Metadata } from "next";
-import { MotionDiv } from "@/components/MotionDiv";
+} from '@/sanity/utils/utilsSanity';
+import { TagProps } from '@/types';
+import { TracingBeam } from '@/components/ui/tracing-beam';
+import { PinContainer } from '@/components/ui/3d-pin';
+import { Metadata } from 'next';
+import { MotionDiv } from '@/components/MotionDiv';
 
 export const revalidate = 0;
 
@@ -41,7 +41,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
     getNextAndPrevious(params?.slug),
   ]);
 
-  const textSplit = project.title.split("-");
+  const textSplit = project.title.split('-');
 
   return (
     <TracingBeam>
@@ -104,8 +104,8 @@ const ProjectDetails = async ({ params }: { params: any }) => {
           </div>
           <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">
             <PinContainer
-              href={project.finalSite.link || ""}
-              className=" bg-black-200 bg-opacity-50 rounded-lg w-full ">
+              href={project.finalSite.link || ''}
+              className=" bg-black-200 bg-opacity-0 rounded-lg w-full ">
               <Image
                 src={urlFor(project.finalSite.siteImage).url()}
                 alt="hero"

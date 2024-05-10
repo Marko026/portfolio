@@ -1,11 +1,11 @@
-"use client";
-import Link from "next/link";
-import React, { useRef, useState, useEffect, use } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import Image from "next/image";
-import { AllProjects } from "@/types";
-import { urlFor } from "@/sanity/lib/sanity";
-import { motion, useInView } from "framer-motion";
+'use client';
+import Link from 'next/link';
+import React, { useRef, useState, useEffect, use } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import Image from 'next/image';
+import { AllProjects } from '@/types';
+import { urlFor } from '@/sanity/lib/sanity';
+import { motion, useInView } from 'framer-motion';
 
 const ProjectCard = ({ project }: { project: AllProjects }) => {
   const ref = useRef(null);
@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
         <Card className="border-none">
           <motion.div
             variants={variants}
-            animate={hasAnimated ? "show" : "hidden"}
+            animate={hasAnimated ? 'show' : 'hidden'}
             transition={{ duration: 1 }}
             ref={ref}>
             <CardHeader className="!p-0">
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }: { project: AllProjects }) => {
                 width={300}
                 height={200}
                 priority={true}
-                className={`object-cover w-full h-60 md:h-96 rounded-3xl mb-5 duration-300 hover:scale-105`}
+                className={`object-cover w-full  h-full  mb-5 duration-300 hover:scale-105`}
               />
 
               <CardTitle className="h2-normal pl-2 !mb-2 line-clamp-1 text-white-900">

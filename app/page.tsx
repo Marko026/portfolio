@@ -1,22 +1,20 @@
-import { SpotlightPreview } from "@/components/SpotlightPreview/page";
-import { ImageTrailHero } from "@/components/MotivationText/page";
-import Image from "next/image";
-import Testimonials from "@/components/Testimonials/page";
-import LinkMyWork from "@/components/SeemyWork/page";
-import { MotionDiv } from "@/components/MotionDiv";
-import { getProjects } from "@/sanity/utils/utilsSanity";
-import ProjectCards from "@/components/ProjectCards/page";
-import Contact from "@/components/Contact/Contact";
+import { SpotlightPreview } from '@/components/SpotlightPreview/page';
+import { ImageTrailHero } from '@/components/MotivationText/page';
+import Image from 'next/image';
+import Testimonials from '@/components/Testimonials/page';
+import LinkMyWork from '@/components/SeemyWork/page';
+import { MotionDiv } from '@/components/MotionDiv';
+import { getProjects } from '@/sanity/utils/utilsSanity';
+import ProjectCards from '@/components/ProjectCards/page';
+import Contact from '@/components/Contact/Contact';
+
+export const revalidate = 0;
 
 export default async function Home() {
   const allCaseStudies = await getProjects();
 
   return (
     <div className="mt-10 md:mt-32 relative ">
-      <div className="absolute  sm:top-80 -z-20">
-        <ImageTrailHero />
-      </div>
-
       <div className="max-w-4xl mx-auto text-center m-0 z-10">
         <SpotlightPreview />
         <LinkMyWork />
