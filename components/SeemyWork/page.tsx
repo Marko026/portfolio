@@ -1,12 +1,12 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 const LinkMyWork = () => {
   return (
     <div className="group sm:mt-9 mx-auto relative w-fit transition-transform duration-300 active:scale-95">
       <Link
         href="/#work"
-        className=" px-2 rounded-2xl flex items-center gap-2 relative z-0 overflow-hidden border-gray-700 border 
+        className=" px-2 rounded-2xl flex items-center gap-2 relative z-0 overflow-hidden 
         bg-transparent  font-semibold
         uppercase text-violet-300 transition-all duration-500
         before:absolute before:inset-0
@@ -18,8 +18,10 @@ const LinkMyWork = () => {
         hover:before:translate-x-[0%]
         hover:before:translate-y-[0%]
         active:scale-95">
-        <div className="px-4 py-2 md:px-6 flex gap-2 md:py-4 rounded-full">
-          <p className="paragraph-regular text-white-900">See my work</p>
+        <div className="px-4 py-2  md:px-6 flex gap-2 md:py-3 rounded-full">
+          <p className="paragraph-regular text-white-900 capitalize">
+            See my work
+          </p>
           <Image src="/icons/Vector.svg" width={12} height={12} alt="arrow" />
         </div>
       </Link>

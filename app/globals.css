@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -42,7 +42,7 @@
   @apply text-[14px] font-bold leading-[21px];
 }
 .gradient-text {
-  @apply bg-gradient-to-r from-[#0026FF] to-[#C1A4FF] bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[#2948fd] via-violet-200 to-[#C1A4FF] bg-clip-text text-transparent;
 }
 .shadow-glow {
   box-shadow: 0 0 30px 0 rgba(193, 164, 255, 0.8),

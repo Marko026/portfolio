@@ -13,7 +13,10 @@ export const ImageTrailHero = () => {
 const WatermarkWrapper = () => {
   return (
     <>
-      <Watermark text="FullStack-NextJS-React-MongoDb-Prisma-JavaScript-FramerMotion" />
+      <Watermark
+        text="FullStackNextJSReactJavaScriptMongoDbTypescriptPrisma"
+        reverse={false}
+      />
     </>
   );
 };
@@ -37,9 +40,9 @@ const TranslateWrapper = ({
 }) => {
   return (
     <motion.div
-      initial={{ translateX: reverse ? '100%' : '0%' }}
+      initial={{ translateX: reverse ? '0%' : '20%' }}
       animate={{ translateX: reverse ? '0%' : '-100%' }}
-      transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}>
+      transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}>
       {children}
     </motion.div>
   );

@@ -14,7 +14,10 @@ export default async function Home() {
   const allCaseStudies = await getProjects();
 
   return (
-    <div className="mt-10 md:mt-32 relative ">
+    <div className="mt-10 md:mt-32 px-2 md:px-5 relative overflow-x-hidden ">
+      <div className="absolute top-80 md:top-96 -z-20">
+        <ImageTrailHero />
+      </div>
       <div className="max-w-4xl mx-auto text-center m-0 z-10">
         <SpotlightPreview />
         <LinkMyWork />
@@ -28,7 +31,7 @@ export default async function Home() {
         />
       </div>
       <Testimonials />
-      <section id="work" className="flex max-w-7xl mx-auto flex-col">
+      <section id="work" className="flex max-w-7xl px-2 mx-auto flex-col">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

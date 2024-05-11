@@ -81,7 +81,7 @@ export async function incrementViewCount(slug: string) {
 }
 
 export async function getNextAndPrevious(slug: string) {
-  const query = `*[_type=="project" && workInProgress == false] | order(_createdAt asc) {
+  const query = `*[_type=="project"] | order(_createdAt desc) {
     _id,
     title,
     "slug":slug.current
