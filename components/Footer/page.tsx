@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -8,7 +8,7 @@ const Footer = () => {
         &copy; 2024 Marko Todorovic created with ❤️
       </p>
       <Link href="mailto:markectodorovic@gmial.com" className="text-white-800">
-        markectodorovic@gmial.com
+        markectodorovic@gmail.com
       </Link>
     </footer>
   );
