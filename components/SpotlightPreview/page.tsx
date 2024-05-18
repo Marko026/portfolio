@@ -5,22 +5,40 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export function SpotlightPreview() {
   const [animationComplete, setAnimationComplete] = React.useState(false);
-  const sentence1 = "Hi! I'am Marko";
-  const sentence2 = ', a Next.js Developer based in Austria';
+  const firstPart = "Hi! I'am Marko,";
+  const secondPart = ' a Next.js Developer based in Austria';
   return (
     <div className="mt-10 md:mt-24">
-      <Spotlight className="top-10  md:left-60 md:top-48" fill="white" />
+      <Spotlight className="top-10 md:left-60 md:top-48" fill="white" />
       <h1 className="h1-semibold my-12 mb-4 text-white-900">
-        <span className="gradient-text text-white-900">
+        <span className="text-white-900">
           <AnimatePresence>
-            {sentence1.split('').map((letter, index) => (
+            {firstPart.split('').map((letter, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: index * 0.05 }}
                 onAnimationComplete={() => {
-                  if (index === sentence1.length - 1) {
+                  if (index === firstPart.length - 1) {
+                    setAnimationComplete(true);
+                  }
+                }}>
+                {letter}
+              </motion.span>
+            ))}
+            {secondPart.split('').map((letter, index) => (
+              <motion.span
+                key={index + firstPart.length}
+                className="text-white-900"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: (index + firstPart.length) * 0.05,
+                }}
+                onAnimationComplete={() => {
+                  if (index === secondPart.length - 1) {
                     setAnimationComplete(true);
                   }
                 }}>
@@ -28,20 +46,6 @@ export function SpotlightPreview() {
               </motion.span>
             ))}
           </AnimatePresence>
-          {animationComplete && (
-            <AnimatePresence>
-              {sentence2.split('').map((letter, index) => (
-                <motion.span
-                  className="text-white-900"
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.05 }}>
-                  {letter}
-                </motion.span>
-              ))}
-            </AnimatePresence>
-          )}
         </span>
       </h1>
       <motion.p
