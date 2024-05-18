@@ -99,7 +99,7 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         <div className="flex flex-col xl:flex-row justify-between">
           <div className=" w-full xl:w-1/4 ">
             <h2 className="h2-normal text-center xl:text-left mb-2">
-              Final Site
+              {project.title.split(' ')[0]}
             </h2>
           </div>
           <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">

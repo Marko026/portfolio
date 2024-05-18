@@ -30,7 +30,6 @@ export default async function Home() {
           alt="dev"
         />
       </div>
-      <Testimonials />
       <section id="work" className="flex max-w-7xl px-2 mx-auto flex-col">
         <MotionDiv
           initial={{ opacity: 0, y: 20 }}
@@ -46,8 +45,9 @@ export default async function Home() {
           </p>
         </MotionDiv>
         <ProjectCards allCaseStudies={allCaseStudies} />
-        <Contact />
+        <Testimonials />
       </section>
+      <Contact />
     </div>
   );
 }
