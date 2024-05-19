@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-figTree relative bg-[#03031C] ">
+      <body className="!font-figTree relative bg-[#03031C] ">
         <main className="pt-16  min-h-screen bg-[url('/squer.svg')]">
           <Navbar />
           {children}

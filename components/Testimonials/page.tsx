@@ -1,10 +1,10 @@
-"use client";
-import { motion, useMotionValue, useMotionValueEvent } from "framer-motion";
-import { useEffect, useState } from "react";
+'use client';
+import { motion, useMotionValue, useMotionValueEvent } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const Testimonials = () => {
   const dragProgress = useMotionValue(0);
-  const [order, setOrder] = useState(["front", "middle", "back"]);
+  const [order, setOrder] = useState(['front', 'middle', 'back']);
   const [dragging, setDragging] = useState(false);
 
   const handleDragEnd = () => {
@@ -35,7 +35,7 @@ const Testimonials = () => {
 
   return (
     <section
-      style={{ pointerEvents: dragging ? "none" : undefined }}
+      style={{ pointerEvents: dragging ? 'none' : undefined }}
       className="overflow-hidden bg-transparent px-8 lg:py-24 text-white-900">
       <div className="mx-auto grid max-w-6xl pb-20 grid-cols-1 items-center gap-16 lg:grid-cols-2 md:gap-8">
         <div>
@@ -108,8 +108,8 @@ const Card = ({
 }) => {
   const dragX = useMotionValue(0);
 
-  useMotionValueEvent(dragX, "change", (latest) => {
-    if (typeof latest === "number" && dragging) {
+  useMotionValueEvent(dragX, 'change', (latest) => {
+    if (typeof latest === 'number' && dragging) {
       dragProgress.set(latest);
     } else {
       dragProgress.set(0);
@@ -123,12 +123,12 @@ const Card = ({
     handleDragEnd();
   };
 
-  const x = position === "front" ? "0%" : position === "middle" ? "33%" : "66%";
+  const x = position === 'front' ? '0%' : position === 'middle' ? '33%' : '66%';
   const rotateZ =
-    position === "front" ? "-6deg" : position === "middle" ? "0deg" : "6deg";
-  const zIndex = position === "front" ? "2" : position === "middle" ? "1" : "0";
+    position === 'front' ? '-6deg' : position === 'middle' ? '0deg' : '6deg';
+  const zIndex = position === 'front' ? '2' : position === 'middle' ? '1' : '0';
 
-  const draggable = position === "front";
+  const draggable = position === 'front';
 
   return (
     <motion.div
@@ -152,14 +152,14 @@ const Card = ({
         duration: 0.35,
       }}
       className={`absolute left-5 top-0 grid h-[450px] w-[250px] sm:w-[350px] select-none place-content-center space-y-6 rounded-2xl border-2 border-slate-700 bg-slate-800/20 p-6 shadow-xl backdrop-blur-md ${
-        draggable ? "cursor-grab active:cursor-grabbing" : ""
+        draggable ? 'cursor-grab active:cursor-grabbing' : ''
       }`}>
       <img
         src={imgUrl}
         alt={`Image of ${author}`}
         className="pointer-events-none mx-auto h-32 w-32 rounded-full border-2 border-slate-700 bg-slate-200 object-cover"
       />
-      <span className="text-center text-lg italic text-slate-400">
+      <span className="text-center text-lg italic !font-figTree text-white-800 ">
         "{testimonial}"
       </span>
       <span className="text-center text-sm font-medium text-indigo-400">
