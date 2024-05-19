@@ -14,7 +14,7 @@ const WatermarkWrapper = () => {
   return (
     <>
       <Watermark
-        text="FullStackNextJSReactJavaScriptMongoDbTypescriptPrisma"
+        text="FullStack NextJS React JavaScript MongoDb Typescript Prisma"
         reverse={false}
       />
     </>
@@ -25,7 +25,7 @@ const Watermark = ({ reverse, text }: { reverse?: boolean; text: string }) => (
   <div className="md:flex select-none overflow-hidden">
     <TranslateWrapper reverse={reverse || false}>
       <span className="w-fit  text-[5vmax] font-black uppercase leading-[0.75] text-slate-600 text-opacity-35">
-        {text}
+        {text.split(' ').join(' ')}
       </span>
     </TranslateWrapper>
   </div>
