@@ -1,22 +1,21 @@
-import React from 'react';
 import Image from 'next/image';
 
 import NextStudyButton from '@/components/NextStudyButton/page';
-import Technologies from '@/components/Technologies/page';
 import PreviousStudyButton from '@/components/PreviousStudyButton/page';
+import Technologies from '@/components/Technologies/page';
 
 import { urlFor } from '@/sanity/lib/sanity';
 
+import { MotionDiv } from '@/components/MotionDiv';
+import { PinContainer } from '@/components/ui/3d-pin';
+import { TracingBeam } from '@/components/ui/tracing-beam';
 import {
   getNextAndPrevious,
   getProject,
   incrementViewCount,
 } from '@/sanity/utils/utilsSanity';
 import { TagProps } from '@/types';
-import { TracingBeam } from '@/components/ui/tracing-beam';
-import { PinContainer } from '@/components/ui/3d-pin';
 import { Metadata } from 'next';
-import { MotionDiv } from '@/components/MotionDiv';
 
 export const revalidate = 0;
 
@@ -98,8 +97,15 @@ const ProjectDetails = async ({ params }: { params: any }) => {
         </div>
         <div className="flex flex-col xl:flex-row justify-between">
           <div className=" w-full xl:w-1/4 ">
-            <h2 className="h2-normal text-center xl:text-left mb-2">
-              {project.title.split(' ')[0]}
+            <h2 className="h2-normal flex items-center gap-2 text-center xl:text-left mb-2">
+              Final Site
+              <Image
+                src="/icons/vector.svg"
+                width={16}
+                height={16}
+                alt="final-site"
+                className="md:mt-2"
+              />
             </h2>
           </div>
           <div className="relative py-3 sm:py-10 md:py-16 lg:py-28 xl:w-full ">
